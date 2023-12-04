@@ -8,6 +8,13 @@ public class JotunHealth : MonoBehaviour
     // Slider for Fill
     public Slider slider;
 
+    // Use to set the enemy health
+    public void SetMaxHealth(int health){
+        slider.maxValue = health;
+        slider.value = health;
+    }
+
+    // change health
     public void SetHealth(int health){
         slider.value = health;
     }

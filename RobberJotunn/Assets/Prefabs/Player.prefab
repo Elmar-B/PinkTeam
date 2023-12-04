@@ -465,6 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  maxHealth: 3
   health: 3
   damageBuffer: 1
   body: {fileID: 4581736097195395710}

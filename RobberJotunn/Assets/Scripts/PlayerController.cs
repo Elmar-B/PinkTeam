@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public int maxHealth;
     public int health;
     public float damageBuffer;
     public Rigidbody2D body;
@@ -20,6 +21,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dashCooldown = 1f;
     private bool isDashing;
     private bool canDash = true;
+
+    void Awake()
+    {
+        health = maxHealth;
+    }
     
     void Update()
     {

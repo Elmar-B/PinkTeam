@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHearts : MonoBehaviour
 {
-    public int health;
+    public PlayerController playerController;
     public int numOfhearts;
 
     public Image[] hearts;
@@ -14,6 +14,8 @@ public class PlayerHearts : MonoBehaviour
     public Sprite emptyHeart;
 
     public void Update(){
+        int health = playerController.health;
+        int numOfhearts = playerController.maxHealth;
 
         if (health > numOfhearts){
             health = numOfhearts;

@@ -23,10 +23,9 @@ public class SwordSwipeAttackPhysics : MonoBehaviour
     void FixedUpdate()
     {
         rotationSpeed = startingRotationSpeed * (1f - Mathf.Abs(transform.rotation.z));
-        Debug.Log(transform.rotation.z);
 
-        if (transform.rotation.z > 0.9 || transform.rotation.z < -0.9)
-            Destroy(gameObject);
+        if ((transform.rotation.z > 0.9 && startingRotationSpeed > 0) || (transform.rotation.z < -0.9 && startingRotationSpeed < 0))
+            startingRotationSpeed *= -1;
 
         if (swing)
             transform.Rotate(0, 0, rotationSpeed * Time.fixedDeltaTime);

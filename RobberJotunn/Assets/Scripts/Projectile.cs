@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -29,9 +30,7 @@ public class Projectile : MonoBehaviour
             playerPos = playerObj.transform.position;
             attacking = true;
             attackTimeCounter = attackTime;
-            Vector3 myPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            Vector3 direction = playerPos - myPos;
-            direction.Normalize();
+
             GameObject projectile = Instantiate(shot);
         }
         if (attackTimeCounter >= 0)
@@ -44,6 +43,8 @@ public class Projectile : MonoBehaviour
             attacking = false;
         }
     }
+
+    
 
 
 }

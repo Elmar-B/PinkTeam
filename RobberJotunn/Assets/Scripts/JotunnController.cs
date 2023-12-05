@@ -61,7 +61,6 @@ public class JotunnController : MonoBehaviour
         {
             GameObject flyingSword = Instantiate(flyingSwordPrefab);
             FlyingSword script = flyingSword.GetComponent<FlyingSword>();
-            script.velocity = 0.3f;
             script.timeToDestroy = 8f;
         }
         else if (rnum < 3f)

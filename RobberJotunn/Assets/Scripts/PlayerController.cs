@@ -6,12 +6,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
-    public int maxHealth;
+    [Header("Sorces")]
+    [SerializeField] Rigidbody2D body;
+    [SerializeField] Animator animator;
+    [SerializeField] AudioSource dashSound;
+    [SerializeField] AudioSource damageSound;
+
+    [Header("Health")]
+    [SerializeField] float speed;
+    [SerializeField] public int maxHealth;
     public int health;
-    public float damageBuffer;
-    public Rigidbody2D body;
-    public Animator animator;
+    [SerializeField] float damageBuffer;
     Vector2 movement;
     private float invincibilityTime;
 
@@ -51,12 +56,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && canDash && movement != Vector2.zero)
         {
-            invincibilityTime = dashDuration;
             StartCoroutine(Dash());
         }
 
         invincibilityTime -= Time.deltaTime;
     }
+
     void FixedUpdate()
     {
         if (!isDashing)
@@ -69,8 +74,9 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Damage"))
         {       
-            if (invincibilityTime < 0)
-            {        
+            if (invincibilityTime < 0 && !isDashing)
+            {
+                damageSound.Play();
                 health -= 1;
                 invincibilityTime = damageBuffer;
             }
@@ -79,6 +85,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        dashSound.Play();
         canDash = false;
         isDashing = true;
         body.velocity = movement.normalized * dashSpeed;

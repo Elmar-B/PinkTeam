@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-
+    public JotunnController jotunnController;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Damageable"))
         {          
-            other.gameObject.GetComponent<JotunnController>().Damage(1);
+            jotunnController.Damage(1);
         }
     }
 }

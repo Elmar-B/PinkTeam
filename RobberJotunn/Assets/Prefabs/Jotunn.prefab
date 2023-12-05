@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9205468050100130515}
   - component: {fileID: 8283946858668160244}
-  - component: {fileID: 6871382445594811032}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Damageable
@@ -152,20 +151,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.1, y: 0}
   m_Size: {x: 0.5, y: 1.2}
   m_Direction: 0
---- !u!114 &6871382445594811032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7742976408949850711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d70e1c4067fa0149b8d46286a570b3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jotunHealth: {fileID: 0}
-  maxHealth: 10
 --- !u!1 &8205473666689712451
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,9 +160,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7166613318853229171}
+  - component: {fileID: 133836263760608309}
   m_Layer: 0
   m_Name: Jotunn
-  m_TagString: Untagged
+  m_TagString: Damageable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,3 +185,20 @@ Transform:
   - {fileID: 9205468050100130515}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &133836263760608309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8205473666689712451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d70e1c4067fa0149b8d46286a570b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  swordSwipeAttackPrefab: {fileID: 519689096241018085, guid: ffae9ba53d339c5809240e12713ce41b, type: 3}
+  flyingSwordPrefab: {fileID: 3436080234588300316, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
+  basicProjectilePrefab: {fileID: 1824120817803593069, guid: ed7b84658db2997438ca7d1c7efb873b, type: 3}
+  slider: {fileID: 0}

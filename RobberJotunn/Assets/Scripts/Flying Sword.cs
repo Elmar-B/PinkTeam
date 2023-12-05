@@ -31,7 +31,7 @@ public class FlyingSword : MonoBehaviour
             {
                 playerPos = playerObj.transform.position;
                 Vector3 direction = (playerPos - transform.position).normalized;
-                myRigidBody.velocity = direction * velocity;
+                myRigidBody.velocity = direction * velocity*Time.deltaTime;
                 
             }
             else
@@ -43,11 +43,11 @@ public class FlyingSword : MonoBehaviour
                 else
                 {
                     Vector3 direction = (originalPos - transform.position).normalized;
-                    myRigidBody.velocity = direction * velocity;
+                    myRigidBody.velocity = direction * velocity*Time.deltaTime;
                 }
             }
 
-            Vector3 rotaionToAdd = new Vector3(0, 0, 2);
+            Vector3 rotaionToAdd = new Vector3(0, 0, 200)*Time.deltaTime;
             transform.Rotate(rotaionToAdd);
         }
 
@@ -72,7 +72,7 @@ public class FlyingSword : MonoBehaviour
             isAttacking = false;
         }
 
-        if(other.gameObject.tag == "Enemy")
+        if(other.gameObject.tag == "Damageable")
         {
             if(!isAttacking)
             {

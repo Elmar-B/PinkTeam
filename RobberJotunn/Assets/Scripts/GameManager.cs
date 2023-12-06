@@ -1,36 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject player;
-    private PlayerController playerScript;
-    private bool gameRunning;
-
-    void Start()
+    // Singelton
+    public static GameManager instance;
+    
+    private void Awake ()
     {
-        gameRunning = true;
-        playerScript = player.GetComponent<PlayerController>();
+        if (GameManager.instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
     }
 
     void Update()
     {
-        if (playerScript.health <= 0)
-            gameRunning = false;
     }
 
     void LateUpdate()
     {
-        if (!gameRunning)
-        {
-            ResetGame();
-        }
     }
 
-    void ResetGame()
+    public void GameOver()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Hello");
+        Time.timeScale = 0;
+        Debug.Log("Hi");
+        UIManager _ui = GetComponent<UIManager>();
+        if (_ui != null)
+        {
+            _ui.ToggleDeathPanel();
+        }
     }
 }

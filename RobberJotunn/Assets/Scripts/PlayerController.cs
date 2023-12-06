@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dashCooldown = 1f;
     private bool isDashing;
     private bool canDash = true;
+    private bool hasWeapon = false;
 
     void Awake()
     {
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && hasWeapon)
         {
             animator.SetTrigger("Attack");
         }
@@ -82,6 +83,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void GiveWeapon()
+    {
+        hasWeapon = true;
+    }
+
     private IEnumerator TakeDamage()
     {
         damageSound.Play();
@@ -90,13 +96,13 @@ public class PlayerController : MonoBehaviour
 
         canTakeDamage = false;
 
-        transform.GetChild(4).gameObject.SetActive(true);
+        transform.GetChild(0).gameObject.SetActive(true);
 
         body.velocity = new Vector2(0, 0);
 
         yield return new WaitForSeconds(damageDuration);
 
-        transform.GetChild(4).gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(false);
 
         takingDamage = false;
 

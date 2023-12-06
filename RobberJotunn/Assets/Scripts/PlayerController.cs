@@ -11,14 +11,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] AudioSource dashSound;
     [SerializeField] AudioSource damageSound;
+    [SerializeField] TrailRenderer trailRenderer;
 
     [Header("Health")]
     [SerializeField] float speed;
     [SerializeField] public int maxHealth;
     public int health;
-    [SerializeField] float damageBuffer;
+    [SerializeField] float damageDuration;
+    [SerializeField] float invincibilityTime;
     Vector2 movement;
-    private float invincibilityTime;
+    private bool takingDamage;
+    private bool canTakeDamage = true;
 
     [Header("Dash")]
     [SerializeField] float dashSpeed = 10f;
@@ -34,7 +37,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if (isDashing)
+        if (isDashing || takingDamage)
         {
             return;
         }
@@ -58,13 +61,11 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
-
-        invincibilityTime -= Time.deltaTime;
     }
 
     void FixedUpdate()
     {
-        if (!isDashing)
+        if (!isDashing && !takingDamage)
         {
             body.velocity = movement.normalized * speed;
         }
@@ -74,13 +75,34 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Damage"))
         {       
-            if (invincibilityTime < 0 && !isDashing)
+            if (canTakeDamage && !isDashing)
             {
-                damageSound.Play();
-                health -= 1;
-                invincibilityTime = damageBuffer;
+                StartCoroutine(TakeDamage());   
             }
         }
+    }
+
+    private IEnumerator TakeDamage()
+    {
+        damageSound.Play();
+        health -= 1;
+        takingDamage = true;
+
+        canTakeDamage = false;
+
+        transform.GetChild(4).gameObject.SetActive(true);
+
+        body.velocity = new Vector2(0, 0);
+
+        yield return new WaitForSeconds(damageDuration);
+
+        transform.GetChild(4).gameObject.SetActive(false);
+
+        takingDamage = false;
+
+        yield return new WaitForSeconds(invincibilityTime);
+
+        canTakeDamage = true;
     }
 
     private IEnumerator Dash()
@@ -89,9 +111,11 @@ public class PlayerController : MonoBehaviour
         canDash = false;
         isDashing = true;
         body.velocity = movement.normalized * dashSpeed;
+        trailRenderer.emitting = true;
         yield return new WaitForSeconds(dashDuration);
 
         isDashing = false;
+        trailRenderer.emitting = false;
 
         yield return new WaitForSeconds(dashCooldown);
 

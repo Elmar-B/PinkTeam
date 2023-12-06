@@ -74,7 +74,14 @@ public class PlayerController : MonoBehaviour
                 health -= 1;
                 invincibilityTime = damageBuffer;
             }
+            if (health <= 0)
+                PlayerDied();
         }
+    }
+
+    private void PlayerDied()
+    {
+        GameManager.instance.GameOver();
     }
 
     private IEnumerator Dash()

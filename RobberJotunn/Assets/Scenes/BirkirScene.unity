@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 519689096241018085, guid: ffae9ba53d339c5809240e12713ce41b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5071586413322000519, guid: ffae9ba53d339c5809240e12713ce41b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1339,63 +1339,6 @@ Transform:
   - {fileID: 1714326646}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &674149080
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2164653337862248361, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.1256
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164653337862248361, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.9978
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164653337862248361, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164653337862248361, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164653337862248361, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164653337862248361, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164653337862248361, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164653337862248361, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164653337862248361, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164653337862248361, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3436080234588300316, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-      propertyPath: m_Name
-      value: Flying Sword
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
 --- !u!1001 &771818499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4414,4 +4357,3 @@ SceneRoots:
   - {fileID: 771818499}
   - {fileID: 209052090}
   - {fileID: 959852443}
-  - {fileID: 674149080}

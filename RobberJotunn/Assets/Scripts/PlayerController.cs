@@ -80,6 +80,8 @@ public class PlayerController : MonoBehaviour
             {
                 StartCoroutine(TakeDamage());   
             }
+            if (health <= 0)
+                PlayerDied();
         }
     }
 
@@ -109,6 +111,11 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(invincibilityTime);
 
         canTakeDamage = true;
+    }
+    
+    private void PlayerDied()
+    {
+        GameManager.instance.GameOver();
     }
 
     private IEnumerator Dash()

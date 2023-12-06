@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2361227513437893420}
   m_Layer: 0
   m_Name: Flying Sword
-  m_TagString: FlyingSword
+  m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 100
-  velocity: 0.28
+  velocity: 30
 --- !u!50 &8713338741048080884
 Rigidbody2D:
   serializedVersion: 4

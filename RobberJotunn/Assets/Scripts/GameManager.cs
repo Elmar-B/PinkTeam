@@ -25,13 +25,21 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("Hello");
         Time.timeScale = 0;
-        Debug.Log("Hi");
         UIManager _ui = GetComponent<UIManager>();
         if (_ui != null)
         {
             _ui.ToggleDeathPanel();
+        }
+    }
+
+    public void Victory()
+    {
+        Time.timeScale = 0;
+        UIManager _ui = GetComponent<UIManager>();
+        if (_ui != null)
+        {
+            _ui.ToggleVictoryPanel();
         }
     }
 }

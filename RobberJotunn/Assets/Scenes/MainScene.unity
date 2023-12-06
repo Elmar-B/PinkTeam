@@ -246,7 +246,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7590013235563653093, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
   m_PrefabInstance: {fileID: 104163847}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1541664049}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e24c6f787c09c3149bb14e9c9f4cbe9b, type: 3}
@@ -1265,6 +1265,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffae9ba53d339c5809240e12713ce41b, type: 3}
+--- !u!1 &506617571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 506617573}
+  - component: {fileID: 506617572}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &506617572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506617571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a5dc3da98b3040832447907fa1661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1541664049}
+--- !u!4 &506617573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506617571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 516.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &515758005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3552,6 +3597,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1541664049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7219720819977323203, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
+  m_PrefabInstance: {fileID: 104163847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1760749165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4164,3 +4214,4 @@ SceneRoots:
   - {fileID: 515758005}
   - {fileID: 642932363}
   - {fileID: 1760749165}
+  - {fileID: 506617573}

@@ -7,6 +7,8 @@ TagManager:
   - Damage
   - Weapon
   - Damageable
+  - FlyingSword
+  - Jotunn
   layers:
   - Default
   - TransparentFX

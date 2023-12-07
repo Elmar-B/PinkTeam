@@ -27,6 +27,9 @@ public class OneSpreadBAllController : MonoBehaviour
             isMoving = true;
         }
 
+        Vector3 addRotation = new Vector3 (0,0,200)*Time.deltaTime;
+        transform.Rotate(addRotation);
+        
         timeToDestroy -=Time.deltaTime;
         if(timeToDestroy <= 0)
         {

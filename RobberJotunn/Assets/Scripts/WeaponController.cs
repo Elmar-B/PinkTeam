@@ -37,7 +37,6 @@ public class WeaponController : MonoBehaviour
             }
             else
             {
-                Debug.Log(movement);
                 animator.SetFloat("Horizontal", movement.x);
                 animator.SetFloat("Vertical", movement.y);
             }

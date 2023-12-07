@@ -6,14 +6,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
-    public int maxHealth;
+    [Header("Sorces")]
+    [SerializeField] Rigidbody2D body;
+    [SerializeField] Animator animator;
+    [SerializeField] AudioSource dashSound;
+    [SerializeField] AudioSource damageSound;
+    [SerializeField] TrailRenderer trailRenderer;
+
+    [Header("Health")]
+    [SerializeField] float speed;
+    [SerializeField] public int maxHealth;
     public int health;
-    public float damageBuffer;
-    public Rigidbody2D body;
-    public Animator animator;
+    [SerializeField] float damageDuration;
+    [SerializeField] float invincibilityTime;
     Vector2 movement;
-    private float invincibilityTime;
+    private bool takingDamage;
+    private bool canTakeDamage = true;
 
     [Header("Dash")]
     [SerializeField] float dashSpeed = 10f;
@@ -21,6 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dashCooldown = 1f;
     private bool isDashing;
     private bool canDash = true;
+    private bool hasWeapon = false;
 
     void Awake()
     {
@@ -29,7 +38,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if (isDashing)
+        if (isDashing || takingDamage)
         {
             return;
         }
@@ -44,22 +53,20 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && hasWeapon)
         {
             animator.SetTrigger("Attack");
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && canDash && movement != Vector2.zero)
         {
-            invincibilityTime = dashDuration;
             StartCoroutine(Dash());
         }
-
-        invincibilityTime -= Time.deltaTime;
     }
+
     void FixedUpdate()
     {
-        if (!isDashing)
+        if (!isDashing && !takingDamage)
         {
             body.velocity = movement.normalized * speed;
         }
@@ -69,16 +76,43 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Damage"))
         {       
-            if (invincibilityTime < 0)
-            {        
-                health -= 1;
-                invincibilityTime = damageBuffer;
+            if (canTakeDamage && !isDashing)
+            {
+                StartCoroutine(TakeDamage());   
             }
             if (health <= 0)
                 PlayerDied();
         }
     }
 
+    public void GiveWeapon()
+    {
+        hasWeapon = true;
+    }
+
+    private IEnumerator TakeDamage()
+    {
+        damageSound.Play();
+        health -= 1;
+        takingDamage = true;
+
+        canTakeDamage = false;
+
+        transform.GetChild(0).gameObject.SetActive(true);
+
+        body.velocity = new Vector2(0, 0);
+
+        yield return new WaitForSeconds(damageDuration);
+
+        transform.GetChild(0).gameObject.SetActive(false);
+
+        takingDamage = false;
+
+        yield return new WaitForSeconds(invincibilityTime);
+
+        canTakeDamage = true;
+    }
+    
     private void PlayerDied()
     {
         GameManager.instance.GameOver();
@@ -86,12 +120,15 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        dashSound.Play();
         canDash = false;
         isDashing = true;
         body.velocity = movement.normalized * dashSpeed;
+        trailRenderer.emitting = true;
         yield return new WaitForSeconds(dashDuration);
 
         isDashing = false;
+        trailRenderer.emitting = false;
 
         yield return new WaitForSeconds(dashCooldown);
 

@@ -30,6 +30,8 @@ public class JotunnController : MonoBehaviour
     {
         health -= damage;
         slider.value = health;
+        if (health <= 0)
+            JotunnDied();
     }
 
     void FixedUpdate()
@@ -37,12 +39,12 @@ public class JotunnController : MonoBehaviour
         timePassed += Time.deltaTime;
         if (timePassed > 6f)
         {
-            attack();
+            Attack();
             timePassed = 0f;
         }
     }
 
-    void attack()
+    void Attack()
     {
         float rnum = Random.Range(0f, 3f);
         // Sword swipe
@@ -69,6 +71,11 @@ public class JotunnController : MonoBehaviour
             Projectile script = projectileSpawner.GetComponent<Projectile>();
             script.attackTime = 10f;
         }
+    }
+
+    private void JotunnDied()
+    {
+        GameManager.instance.Victory();
     }
 
 

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponController : MonoBehaviour
@@ -7,6 +9,13 @@ public class WeaponController : MonoBehaviour
     public Animator animator;
     public JotunnController jotunnController;
     Vector2 movement;
+    [Header("Stats")]
+    [SerializeField] int damage;
+    [SerializeField] public float attackDuration;
+    [SerializeField] public float attackCooldown;
+    [SerializeField] AudioSource attackSound;
+    [SerializeField] AudioSource damageSound;
+    private bool canAttack = true;
 
     void Start()
     {
@@ -21,18 +30,38 @@ public class WeaponController : MonoBehaviour
 
         if (movement != Vector2.zero)
         {
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
+            if (Math.Abs(movement.x) == Math.Abs(movement.y))
+            {
+                animator.SetFloat("Horizontal", 0);
+                animator.SetFloat("Vertical", movement.y);
+            }
+            else
+            {
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
+            }
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.K) && canAttack)
         {
+            StartCoroutine(Attack());
             animator.SetTrigger("Attack");
         }
     }
 
     public void Damage()
     {
-        jotunnController.Damage(1);
+        damageSound.Play();
+        jotunnController.Damage(damage);
+    }
+
+    public IEnumerator Attack()
+    {
+        attackSound.Play();
+        canAttack = false;
+
+        yield return new WaitForSeconds(attackDuration + attackCooldown);
+
+        canAttack = true;
     }
 }

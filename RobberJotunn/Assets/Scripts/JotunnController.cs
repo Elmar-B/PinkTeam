@@ -46,7 +46,7 @@ public class JotunnController : MonoBehaviour
 
     void Attack()
     {
-        float rnum = Random.Range(0f, 3f);
+        float rnum = Random.Range(1f, 1.5f);
         // Sword swipe
         if (rnum < 1f)
         {

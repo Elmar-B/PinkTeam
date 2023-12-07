@@ -6,13 +6,21 @@ public class GameManager : MonoBehaviour
 {
     // Singelton
     public static GameManager instance;
+    public AudioSource BackgroundMusic;
     
     private void Awake ()
     {
         if (GameManager.instance == null)
             instance = this;
+            
+
         else
             Destroy(gameObject);
+    }
+
+    void Start()
+    {
+        BackgroundMusic.Play();
     }
 
     void Update()
@@ -31,6 +39,7 @@ public class GameManager : MonoBehaviour
         {
             _ui.ToggleDeathPanel();
         }
+        BackgroundMusic.Stop();
     }
 
     public void Victory()
@@ -41,5 +50,6 @@ public class GameManager : MonoBehaviour
         {
             _ui.ToggleVictoryPanel();
         }
+        BackgroundMusic.Stop();
     }
 }

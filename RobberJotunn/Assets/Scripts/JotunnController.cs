@@ -12,6 +12,8 @@ public class JotunnController : MonoBehaviour
     public GameObject swordSwipeAttackPrefab;
     public GameObject flyingSwordPrefab;
     public GameObject basicProjectilePrefab;
+    public SpriteRenderer spriteRenderer;
+    public float damageTime;
 
     // Health bar:
     public Slider slider;
@@ -30,8 +32,19 @@ public class JotunnController : MonoBehaviour
     {
         health -= damage;
         slider.value = health;
+        StartCoroutine(Blink());
         if (health <= 0)
             JotunnDied();
+    }
+
+    private IEnumerator Blink()
+    {
+        Color oldColor = spriteRenderer.color;
+        spriteRenderer.color = new Color(1, 0, 0);
+
+        yield return new WaitForSeconds(damageTime);
+
+        spriteRenderer.color = oldColor;
     }
 
     void FixedUpdate()

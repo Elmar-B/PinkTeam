@@ -10736,6 +10736,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1329098428090063331, guid: 05a779a04da69f14cbefe7f9f07a7125, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6707384737636007027, guid: 05a779a04da69f14cbefe7f9f07a7125, type: 3}
       propertyPath: m_Name
       value: JotunnHandSmoke

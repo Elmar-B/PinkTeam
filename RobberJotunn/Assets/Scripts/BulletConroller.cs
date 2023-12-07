@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Runtime;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 
 public class BulletConroller : MonoBehaviour
@@ -26,9 +28,10 @@ public class BulletConroller : MonoBehaviour
         if(!isMoving){
             Vector3 direction = (playerPos - transform.position).normalized;
             myRigidBody.velocity = direction * velocity;
-
             isMoving = true;
         }
+        Vector3 addRotation = new Vector3 (0,0,200)*Time.deltaTime;
+        transform.Rotate(addRotation);
 
 
         timeToDestroy -= Time.deltaTime;

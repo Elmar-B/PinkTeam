@@ -201,4 +201,6 @@ MonoBehaviour:
   swordSwipeAttackPrefab: {fileID: 519689096241018085, guid: ffae9ba53d339c5809240e12713ce41b, type: 3}
   flyingSwordPrefab: {fileID: 3436080234588300316, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
   basicProjectilePrefab: {fileID: 1824120817803593069, guid: ed7b84658db2997438ca7d1c7efb873b, type: 3}
+  spriteRenderer: {fileID: 2134340268736456406}
+  damageTime: 0.3
   slider: {fileID: 0}

@@ -13,6 +13,7 @@ public class FlyingSword : MonoBehaviour
     private bool isMoving = true;
     private bool isAttacking = true;
     private Vector3 originalPos;
+    public float spinningVelocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class FlyingSword : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(isMoving)
         {
@@ -31,7 +32,7 @@ public class FlyingSword : MonoBehaviour
             {
                 playerPos = playerObj.transform.position;
                 Vector3 direction = (playerPos - transform.position).normalized;
-                myRigidBody.velocity = direction * velocity*Time.deltaTime;
+                myRigidBody.velocity = direction * velocity;
                 
             }
             else
@@ -43,11 +44,11 @@ public class FlyingSword : MonoBehaviour
                 else
                 {
                     Vector3 direction = (originalPos - transform.position).normalized;
-                    myRigidBody.velocity = direction * velocity*Time.deltaTime;
+                    myRigidBody.velocity = direction * velocity;
                 }
             }
 
-            Vector3 rotaionToAdd = new Vector3(0, 0, 200)*Time.deltaTime;
+            Vector3 rotaionToAdd = new Vector3(0, 0, spinningVelocity);
             transform.Rotate(rotaionToAdd);
         }
 

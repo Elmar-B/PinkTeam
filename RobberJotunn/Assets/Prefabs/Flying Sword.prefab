@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 100
-  velocity: 30
+  velocity: 0.5
+  spinningVelocity: 5
 --- !u!50 &8713338741048080884
 Rigidbody2D:
   serializedVersion: 4

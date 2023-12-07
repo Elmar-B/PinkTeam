@@ -17,19 +17,19 @@ public class OneSpreadBAllController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         if(!isMoving)
         {
             Vector3 direction = new Vector3(0,-1,0);
-            myRigidBody.velocity = direction * velocity * Time.deltaTime;
+            myRigidBody.velocity = direction * velocity;
             isMoving = true;
         }
 
-        Vector3 addRotation = new Vector3 (0,0,200)*Time.deltaTime;
+        Vector3 addRotation = new Vector3 (0,0,5);
         transform.Rotate(addRotation);
-        
+
         timeToDestroy -=Time.deltaTime;
         if(timeToDestroy <= 0)
         {

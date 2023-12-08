@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ATTACK: Mouse 1'
+  m_text: 'ATTACK: K'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d714792c351d2c54699f2f6f59299ea6, type: 2}
   m_sharedMaterial: {fileID: -1558739591931463168, guid: d714792c351d2c54699f2f6f59299ea6, type: 2}

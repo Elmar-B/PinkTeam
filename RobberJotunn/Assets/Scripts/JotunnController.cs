@@ -12,7 +12,9 @@ public class JotunnController : MonoBehaviour
     public GameObject swordSwipeAttackPrefab;
     public GameObject flyingSwordPrefab;
     public GameObject basicProjectilePrefab;
-    public SpriteRenderer spriteRenderer;
+    [SerializeField] SpriteRenderer bodySprite;
+    [SerializeField] SpriteRenderer rightHandSprite;
+    [SerializeField] SpriteRenderer leftHandSprite;
     public float damageTime;
 
     // Health bar:
@@ -39,12 +41,16 @@ public class JotunnController : MonoBehaviour
 
     private IEnumerator Blink()
     {
-        Color oldColor = spriteRenderer.color;
-        spriteRenderer.color = new Color(1, 0, 0);
+        Color oldColor = bodySprite.color;
+        bodySprite.color = new Color(1, 0, 0);
+        rightHandSprite.color = new Color(1, 0, 0);
+        leftHandSprite.color = new Color(1, 0, 0);
 
         yield return new WaitForSeconds(damageTime);
 
-        spriteRenderer.color = oldColor;
+        bodySprite.color = oldColor;
+        rightHandSprite.color = oldColor;
+        leftHandSprite.color = oldColor;
     }
 
     void FixedUpdate()
@@ -75,8 +81,6 @@ public class JotunnController : MonoBehaviour
         else if (rnum < 2f)
         {
             GameObject flyingSword = Instantiate(flyingSwordPrefab);
-            FlyingSword script = flyingSword.GetComponent<FlyingSword>();
-            script.timeToDestroy = 8f;
         }
         else if (rnum < 3f)
         {

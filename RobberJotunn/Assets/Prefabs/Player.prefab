@@ -173,7 +173,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7590013235563653093
@@ -193,7 +193,7 @@ MonoBehaviour:
   dashSound: {fileID: 7582766306629338790}
   damageSound: {fileID: 1417405922042891201}
   trailRenderer: {fileID: 7956101037888715174}
-  speed: 1
+  speed: 0.75
   maxHealth: 3
   health: 3
   damageDuration: 0.3
@@ -201,6 +201,8 @@ MonoBehaviour:
   dashSpeed: 3
   dashDuration: 0.1
   dashCooldown: 0.5
+  isAttacking: 0
+  canAttack: 1
 --- !u!50 &4581736097195395710
 Rigidbody2D:
   serializedVersion: 4

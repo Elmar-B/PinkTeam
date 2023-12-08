@@ -1611,6 +1611,14 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 642932366}
+    - target: {fileID: 1961203365372161731, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 369401759}
+    - target: {fileID: 4440624792830838401, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 369401759}
     - target: {fileID: 7166613318853229171, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -1650,6 +1658,14 @@ PrefabInstance:
     - target: {fileID: 7166613318853229171, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194620768216597885, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.563
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194620768216597885, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8205473666689712451, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: m_Name
@@ -3669,6 +3685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5a5dc3da98b3040832447907fa1661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BackgroundMusic: {fileID: 0}
 --- !u!4 &566846676
 Transform:
   m_ObjectHideFlags: 0

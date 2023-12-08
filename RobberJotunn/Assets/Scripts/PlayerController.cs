@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Sorces")]
-    [SerializeField] Rigidbody2D body;
+    [SerializeField] public Rigidbody2D body;
     [SerializeField] Animator animator;
     [SerializeField] AudioSource dashSound;
     [SerializeField] AudioSource damageSound;
@@ -29,7 +29,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dashCooldown = 1f;
     private bool isDashing;
     private bool canDash = true;
-    private bool hasWeapon = false;
+    private bool hasWeapon = true;
+    public bool isAttacking = false;
+    public bool canAttack = true;
 
     void Awake()
     {
@@ -43,6 +45,12 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        if (isAttacking)
+        {
+            body.velocity = Vector2.zero;
+            return;
+        }
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -52,10 +60,11 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("Vertical", movement.y);
         }
         animator.SetFloat("Speed", movement.sqrMagnitude);
-
-        if (Input.GetMouseButtonDown(0) && hasWeapon)
+        
+        if (Input.GetKeyDown(KeyCode.K) && hasWeapon && canAttack)
         {
             animator.SetTrigger("Attack");
+            StartCoroutine(Attack());
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && canDash && movement != Vector2.zero)
@@ -66,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isDashing && !takingDamage)
+        if (!isDashing && !takingDamage && !isAttacking)
         {
             body.velocity = movement.normalized * speed;
         }
@@ -133,5 +142,22 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
 
         canDash = true;
+    }
+
+    public IEnumerator Attack()
+    {
+        isAttacking = true;
+        canAttack = false;
+
+
+        WeaponController weapon = transform.GetChild(1).GetComponent<WeaponController>();
+
+        yield return new WaitForSeconds(weapon.attackDuration);
+        
+        isAttacking = false;
+
+        yield return new WaitForSeconds(weapon.attackCooldown);
+
+        canAttack = true;
     }
 }

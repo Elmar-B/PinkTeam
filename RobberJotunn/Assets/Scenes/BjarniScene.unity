@@ -10433,6 +10433,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8230260866379708286, guid: d9edf7d70c22285418a649e9d91af78b, type: 3}
+      propertyPath: ColorModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230260866379708286, guid: d9edf7d70c22285418a649e9d91af78b, type: 3}
       propertyPath: CollisionModule.type
       value: 0
       objectReference: {fileID: 0}
@@ -10442,7 +10446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8230260866379708286, guid: d9edf7d70c22285418a649e9d91af78b, type: 3}
       propertyPath: CollisionModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8230260866379708286, guid: d9edf7d70c22285418a649e9d91af78b, type: 3}
       propertyPath: CollisionModule.radiusScale

@@ -41,10 +41,11 @@ public class JotunnController : MonoBehaviour
 
     private IEnumerator Blink()
     {
-        Color oldColor = bodySprite.color;
-        bodySprite.color = new Color(1, 0, 0);
-        rightHandSprite.color = new Color(1, 0, 0);
-        leftHandSprite.color = new Color(1, 0, 0);
+        Color oldColor = new Color(1, 1, 1);
+        Color newColor = new Color(1, 0, 0);
+        bodySprite.color = newColor;
+        rightHandSprite.color = newColor;
+        leftHandSprite.color = newColor;
 
         yield return new WaitForSeconds(damageTime);
 

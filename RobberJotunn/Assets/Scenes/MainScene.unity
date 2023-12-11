@@ -257,7 +257,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7590013235563653093, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
   m_PrefabInstance: {fileID: 104163847}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 544707594}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e24c6f787c09c3149bb14e9c9f4cbe9b, type: 3}
@@ -1868,6 +1868,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1961203365372161731, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 544707594}
+    - target: {fileID: 4440624792830838401, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 544707594}
     - target: {fileID: 5374366950325331935, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -3999,6 +4007,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &544707594 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7219720819977323203, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
+  m_PrefabInstance: {fileID: 104163847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &642932363
 PrefabInstance:
   m_ObjectHideFlags: 0

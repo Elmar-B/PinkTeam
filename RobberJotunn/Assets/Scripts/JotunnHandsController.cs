@@ -10,7 +10,8 @@ public class JotunnHandsController : MonoBehaviour
     public float attackOdds;
     public float range;
     public float attackTime;
-    private CapsuleCollider2D handCollider;
+    private Collider2D triggerCollider;
+    private Collider2D physiscsCollider;
     private bool preparing;
     private bool attacking;
     private bool resting;
@@ -23,7 +24,8 @@ public class JotunnHandsController : MonoBehaviour
 
     void Start()
     {
-        handCollider = gameObject.GetComponent<CapsuleCollider2D>();
+        triggerCollider = gameObject.GetComponent<CapsuleCollider2D>();
+        physiscsCollider = gameObject.transform.GetChild(0).gameObject.GetComponent<Collider2D>();
         defaultPos = startingPos = target = transform.position;
         transform.position = transform.position + (Vector3.up * 0.2f);
         Attacking(defaultPos);
@@ -63,14 +65,15 @@ public class JotunnHandsController : MonoBehaviour
         {
             passedTime += Time.deltaTime;
             if (passedTime > 0.1f)
-                handCollider.isTrigger = false;
+                gameObject.tag = "Damageable";
+                physiscsCollider.enabled = true;
             if (passedTime > restingTime)
                 Retract();
         }
         // Going back to default position
         else if (retracting)
         {
-            if (transform.position == default)
+            if (transform.position == defaultPos)
                 retracting = false;
             else
             {
@@ -83,10 +86,10 @@ public class JotunnHandsController : MonoBehaviour
     private void PrepareAttack()
     {
         gameObject.tag = "Damage";
-        handCollider.isTrigger = true;
-        handCollider.enabled = false;
+        triggerCollider.enabled = false;
+        physiscsCollider.enabled = false;
         startingPos = transform.position;
-        target += new Vector3(0, 0.3f, 0);
+        target = defaultPos + new Vector3(0, 0.3f, 0);
         passedTime = 0f;
         preparing = true;
     }
@@ -108,7 +111,7 @@ public class JotunnHandsController : MonoBehaviour
     private void Strike()
     {
         attacking = false;
-        handCollider.enabled = true;
+        triggerCollider.enabled = true;
         SplashEffect();
         passedTime = 0f;
         restingTime = 2f;
@@ -118,8 +121,6 @@ public class JotunnHandsController : MonoBehaviour
     private void Retract()
     {
         resting = false;
-        handCollider.isTrigger = false;
-        gameObject.tag = "Damageable";
         startingPos = transform.position;
         passedTime = 0f;
         retracting = true;
@@ -136,7 +137,7 @@ public class JotunnHandsController : MonoBehaviour
         if (other.gameObject.CompareTag("Weapon") && !attacking && !resting && !retracting)
         {
             float rnum = Random.Range(0f, 1f);
-            if (rnum > attackOdds)
+            if (rnum < attackOdds)
                 PrepareAttack();
         }
     }

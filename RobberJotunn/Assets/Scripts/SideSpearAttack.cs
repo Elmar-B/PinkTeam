@@ -2,13 +2,7 @@ using UnityEngine;
 
 public class SideSpearAttack : MonoBehaviour
 {
-    private float y1 = -0.7f;
-    private float y2 = -0.25f;
-    private float y3 = 0.25f;
-    private float x1 = -0.95f;
-    private float x2 = 0.95f;
-    private float x;
-    private float y;
+    
     public float velocity;
     private Vector3 direction;
     private int secondRandomInt;
@@ -16,6 +10,16 @@ public class SideSpearAttack : MonoBehaviour
     public GameObject SpearWarning;
     public float timeToDestroy;
     private bool isMoving = false;
+    private GameObject playerObj;
+    private Vector3 playerPos;
+
+    private float y1 = -0.7f;
+    private float y2 = -0.25f;
+    private float y3 = 0.25f;
+    private float x1 = -0.95f;
+    private float x2 = 0.95f;
+
+    private float y;
     // private var numbers = new Array(-0.7f, -0.25f, 0.25f);
     
 
@@ -23,13 +27,45 @@ public class SideSpearAttack : MonoBehaviour
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
-        int randInt = Random.Range(0,2);
-        if(randInt == 0)
+        playerObj = GameObject.FindGameObjectWithTag("Player");
+        playerPos = playerObj.transform.position;
+        // int randInt = Random.Range(0,2);
+        // if(randInt == 0)
+        if(playerPos.x > 0.67f && playerPos.x < 1.23f)
         {
-            float[] sidefloats = {y1, y2, y3};
-            int randomInt = Random.Range(0,3);
-            y = sidefloats[randomInt];
-            
+            // float[] floats = {x1,x2};
+            // int randomInt = Random.Range(0,2);
+            // x = floats[randomInt];
+
+            direction = new Vector3(0, -1, 0);
+            transform.position = new Vector3(x2, 4, 0);
+            transform.eulerAngles = new Vector3(0,0,180);
+        }
+        else if(playerPos.x < -0.67f && playerPos.x > -1.23f)
+        {
+            direction = new Vector3(0, -1, 0);
+            transform.position = new Vector3(x1, 4, 0);
+            transform.eulerAngles = new Vector3(0,0,180);
+        }
+
+        else
+        {
+            // float[] sidefloats = {y1, y2, y3};
+            // int randomInt = Random.Range(0,3);
+            // y = sidefloats[randomInt];
+            if(playerPos.y > -0.05f)
+            {
+                y = y3;
+            }
+            else if(playerPos.y <= -0.05f && playerPos.y >= -0.4f)
+            {
+                y = y2;
+            }
+            else
+            {
+                y = y1;
+            }
+
             secondRandomInt = Random.Range(0,2);
             if(secondRandomInt == 0)
             {
@@ -43,16 +79,6 @@ public class SideSpearAttack : MonoBehaviour
                 transform.eulerAngles = new Vector3(0,0,270);
             }
             SpearWarning.transform.position = new Vector3(0.01f, y, 0);
-        }
-        else
-        {
-            float[] floats = {x1,x2};
-            int randomInt = Random.Range(0,2);
-            x = floats[randomInt];
-
-            direction = new Vector3(0, -1, 0);
-            transform.position = new Vector3(x, 4, 0);
-            transform.eulerAngles = new Vector3(0,0,180);
         }
     }
 

@@ -28,7 +28,7 @@ public class JotunnController : MonoBehaviour
 
     void Awake()
     {
-        state = State.Phase1;
+        state = State.Phase2;
         slider.maxValue = maxHealth;
         health = maxHealth;
         slider.value = health;

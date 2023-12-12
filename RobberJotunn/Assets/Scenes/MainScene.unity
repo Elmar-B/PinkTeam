@@ -1864,10 +1864,6 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 642932364}
-    - target: {fileID: 1225989811719441086, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1961203365372161731, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: player
       value: 
@@ -1876,14 +1872,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 544707594}
-    - target: {fileID: 5374366950325331935, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6871382445594811032, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: jotunHealth
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7166613318853229171, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -1927,14 +1915,6 @@ PrefabInstance:
     - target: {fileID: 8205473666689712451, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: m_Name
       value: Jotunn
-      objectReference: {fileID: 0}
-    - target: {fileID: 8205473666689712451, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8555319783092063905, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4035,6 +4015,10 @@ PrefabInstance:
     - target: {fileID: 6792819929700135194, guid: a602c20329202784caa33beaf29db68b, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195494033934535283, guid: a602c20329202784caa33beaf29db68b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7258347638790769747, guid: a602c20329202784caa33beaf29db68b, type: 3}
       propertyPath: m_Pivot.x
@@ -9788,7 +9772,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1631857563
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1594499866
 RectTransform:

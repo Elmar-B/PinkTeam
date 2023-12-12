@@ -17,6 +17,15 @@ public class FlyingSword : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        float rnum =Random.Range(0f, 2f);
+        if(rnum < 1f)
+        {
+            transform.position = new(1,1,0);
+        }
+        else if(rnum < 2f)
+        {
+            transform.position = new(-1,1,0);
+        }
         myRigidBody = GetComponent<Rigidbody2D>();
         playerObj = GameObject.FindGameObjectWithTag("Player");
         originalPos = transform.position;

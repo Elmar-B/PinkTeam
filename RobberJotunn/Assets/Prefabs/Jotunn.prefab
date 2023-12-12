@@ -616,10 +616,11 @@ MonoBehaviour:
   maxHealth: 50
   swordSwipeAttackPrefab: {fileID: 519689096241018085, guid: ffae9ba53d339c5809240e12713ce41b, type: 3}
   flyingSwordPrefab: {fileID: 3436080234588300316, guid: 83e1f7d55fa02e64d9eafa89d320feea, type: 3}
-  basicProjectilePrefab: {fileID: 1824120817803593069, guid: ed7b84658db2997438ca7d1c7efb873b, type: 3}
+  basicProjectilePrefab: {fileID: 9021927707458898641, guid: fe7de4053b3d3af4a8de9a2d1bd1cc6b, type: 3}
   bodySprite: {fileID: 2134340268736456406}
   rightHandSprite: {fileID: 5374366950325331935}
   leftHandSprite: {fileID: 1225989811719441086}
   damageTime: 0.3
   sideSpearAttack: {fileID: 967793078363895400, guid: 2672dae0382bc2e46bfe7bf201ffc2a1, type: 3}
+  normalSpearAttack: {fileID: 488707002386888971, guid: 520b66892ddfc4f47847c758cf483838, type: 3}
   slider: {fileID: 0}

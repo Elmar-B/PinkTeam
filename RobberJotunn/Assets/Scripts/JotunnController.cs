@@ -17,6 +17,7 @@ public class JotunnController : MonoBehaviour
     [SerializeField] SpriteRenderer leftHandSprite;
     public float damageTime;
     public GameObject sideSpearAttack;
+    public GameObject normalSpearAttack;
 
     // Health bar:
     public Slider slider;
@@ -95,17 +96,21 @@ public class JotunnController : MonoBehaviour
                 else if (rnum < 3f)
                 {
                     GameObject projectileSpawner = Instantiate(basicProjectilePrefab);
-                    Projectile script = projectileSpawner.GetComponent<Projectile>();
-                    script.attackTime = 10f;
+                    // Projectile script = projectileSpawner.GetComponent<Projectile>();
+                    // script.attackTime = 10f;
                 }
                 break;
             }
             case State.Phase2:
             {
-                float rnum = Random.Range(0f, 1f);
+                float rnum = Random.Range(0f, 2f);
                 if(rnum < 1f)
                 {
                     GameObject spearSideAttack = Instantiate(sideSpearAttack);
+                }
+                else if(rnum < 2f)
+                {
+                    GameObject spearNormalAttack = Instantiate(normalSpearAttack);
                 }
                 break;
             }

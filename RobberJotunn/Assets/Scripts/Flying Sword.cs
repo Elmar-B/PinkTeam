@@ -68,12 +68,16 @@ public class FlyingSword : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Weapon")
+        {
+            Destroy(gameObject);
+        }
+        else if(other.gameObject.tag == "Player")
         {
             isAttacking = false;
         }
 
-        if(other.gameObject.tag == "Damageable")
+        else if(other.gameObject.tag == "Damageable")
         {
             if(!isAttacking)
             {

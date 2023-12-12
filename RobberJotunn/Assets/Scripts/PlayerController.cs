@@ -29,9 +29,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dashCooldown = 1f;
     private bool isDashing;
     private bool canDash = true;
-    private bool hasWeapon = true;
-    public bool isAttacking = false;
+    private bool hasWeapon;
+    private string weaponType;
+    public bool isAttacking;
     public bool canAttack = true;
+    private bool isAlive = true;
 
     void Awake()
     {
@@ -40,7 +42,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if (isDashing || takingDamage)
+        if (isDashing || takingDamage || !isAlive)
         {
             return;
         }
@@ -63,7 +65,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.K) && hasWeapon && canAttack)
         {
-            animator.SetTrigger("Attack");
+            animator.SetTrigger(weaponType);
             StartCoroutine(Attack());
         }
 
@@ -90,13 +92,14 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(TakeDamage());   
             }
             if (health <= 0)
-                PlayerDied();
+                StartCoroutine(PlayerDied());
         }
     }
 
-    public void GiveWeapon()
+    public void GiveWeapon(string weapon)
     {
         hasWeapon = true;
+        weaponType = weapon;
     }
 
     private IEnumerator TakeDamage()
@@ -122,8 +125,12 @@ public class PlayerController : MonoBehaviour
         canTakeDamage = true;
     }
     
-    private void PlayerDied()
+    private IEnumerator PlayerDied()
     {
+        animator.SetTrigger("Death");
+        body.Sleep();
+        isAlive = false;
+        yield return new WaitForSeconds(4);
         GameManager.instance.GameOver();
     }
 

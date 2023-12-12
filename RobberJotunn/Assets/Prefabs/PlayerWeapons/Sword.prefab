@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 2124526674466552305}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 5.57, z: 0}
-  m_LocalScale: {x: 0.56, y: 4.6046, z: 1}
+  m_LocalPosition: {x: 0, y: 0.125, z: 0}
+  m_LocalScale: {x: 0.214, y: 0.06916, z: 0.14}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3374863082661506198}
@@ -99,8 +99,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6142131069426187330}
-  - component: {fileID: 8540988835730444558}
   - component: {fileID: 3212993729836980922}
+  - component: {fileID: 6250773054871840671}
   m_Layer: 0
   m_Name: AttackDownHitbox
   m_TagString: Weapon
@@ -117,13 +117,25 @@ Transform:
   m_GameObject: {fileID: 2338327855777924114}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21, y: -4.89, z: 0}
-  m_LocalScale: {x: 0.58, y: 4.6952996, z: 1}
+  m_LocalPosition: {x: 0, y: -0.1058, z: 0}
+  m_LocalScale: {x: 0.21400002, y: 0.04576, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3374863082661506198}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &8540988835730444558
+--- !u!114 &3212993729836980922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338327855777924114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 342eac221b839264183eefd62618d7f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &6250773054871840671
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,18 +180,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3212993729836980922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2338327855777924114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 342eac221b839264183eefd62618d7f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5670589441144509585
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,8 +207,8 @@ Transform:
   m_GameObject: {fileID: 5670589441144509585}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.68, y: 0.57, z: 0}
-  m_LocalScale: {x: 4.7585998, y: 0.52, z: 1}
+  m_LocalPosition: {x: -0.103, y: 0, z: 0}
+  m_LocalScale: {x: 0.147245, y: 0.2208675, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3374863082661506198}
@@ -328,6 +328,7 @@ MonoBehaviour:
   attackCooldown: 0.25
   attackSound: {fileID: -2979147282957248201}
   damageSound: {fileID: 2326125791479069259}
+  weaponName: Sword
 --- !u!95 &2601707902613443752
 Animator:
   serializedVersion: 5
@@ -568,8 +569,8 @@ Transform:
   m_GameObject: {fileID: 7210915286211779255}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.74, y: 0.59, z: 0}
-  m_LocalScale: {x: 4.73256, y: 0.51, z: 1}
+  m_LocalPosition: {x: 0.103, y: -0, z: 0}
+  m_LocalScale: {x: 0.14724499, y: 0.22086748, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3374863082661506198}

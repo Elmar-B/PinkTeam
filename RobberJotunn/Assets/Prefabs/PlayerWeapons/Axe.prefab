@@ -328,6 +328,7 @@ MonoBehaviour:
   attackCooldown: 0.15
   attackSound: {fileID: -2979147282957248201}
   damageSound: {fileID: 2326125791479069259}
+  weaponName: Axe
 --- !u!95 &2601707902613443752
 Animator:
   serializedVersion: 5

@@ -9,7 +9,6 @@ public class PickerController : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("test");
             Destroy(GameObject.FindGameObjectWithTag("Weapon"));
 
             GameObject weaponObject = Instantiate(weapon, player.transform.position, player.transform.rotation);
@@ -17,7 +16,9 @@ public class PickerController : MonoBehaviour
             weaponObject.transform.parent = player.transform;
             weaponObject.transform.localScale = new Vector3(1, 1, 1);
 
-            player.GetComponent<PlayerController>().GiveWeapon();            
+            string weaponName = weapon.GetComponent<WeaponController>().weaponName;
+
+            player.GetComponent<PlayerController>().GiveWeapon(weaponName);            
         }
     }
 

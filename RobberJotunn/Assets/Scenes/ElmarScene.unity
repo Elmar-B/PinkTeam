@@ -1623,10 +1623,26 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 369401759}
+    - target: {fileID: 1961203365372161731, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
+      propertyPath: attackOdds
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961203365372161731, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
+      propertyPath: attackTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4440624792830838401, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 369401759}
+    - target: {fileID: 4440624792830838401, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
+      propertyPath: attackOdds
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4440624792830838401, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
+      propertyPath: attackTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7166613318853229171, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0

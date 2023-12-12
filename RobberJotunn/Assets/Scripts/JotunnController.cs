@@ -17,7 +17,6 @@ public class JotunnController : MonoBehaviour
     [SerializeField] SpriteRenderer leftHandSprite;
     public float damageTime;
     public GameObject sideSpearAttack;
-    public GameObject normalSpearAttack;
 
     // Health bar:
     public Slider slider;
@@ -29,7 +28,7 @@ public class JotunnController : MonoBehaviour
 
     void Awake()
     {
-        state = State.Phase1;
+        state = State.Phase2;
         slider.maxValue = maxHealth;
         health = maxHealth;
         slider.value = health;
@@ -103,15 +102,12 @@ public class JotunnController : MonoBehaviour
             }
             case State.Phase2:
             {
-                float rnum = Random.Range(0f, 2f);
+                float rnum = Random.Range(0f, 1f);
                 if(rnum < 1f)
                 {
                     GameObject spearSideAttack = Instantiate(sideSpearAttack);
                 }
-                else if(rnum < 2f)
-                {
-                    GameObject spearNormalAttack = Instantiate(normalSpearAttack);
-                }
+              
                 break;
             }
             case State.Phase3:

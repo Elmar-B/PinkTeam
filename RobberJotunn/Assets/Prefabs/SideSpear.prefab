@@ -191,7 +191,7 @@ PolygonCollider2D:
       - {x: -0.014294605, y: 0.71606076}
       - {x: -0.019668601, y: 0.1669738}
       - {x: -0.014612801, y: -1.2182221}
-      - {x: -0.04, y: -1.31}
+      - {x: -0.019495584, y: -1.3070707}
       - {x: 0.04, y: -1.31}
       - {x: 0.03227894, y: -1.2135003}
       - {x: 0.02500756, y: 0.72151005}
@@ -211,20 +211,12 @@ PrefabInstance:
       value: SpearWarning
       objectReference: {fileID: 0}
     - target: {fileID: 8867318172255941819, guid: c0c35a2099babd546b573884f586e9c2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 15.48992
-      objectReference: {fileID: 0}
-    - target: {fileID: 8867318172255941819, guid: c0c35a2099babd546b573884f586e9c2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.44999987
-      objectReference: {fileID: 0}
-    - target: {fileID: 8867318172255941819, guid: c0c35a2099babd546b573884f586e9c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: -0.0004
       objectReference: {fileID: 0}
     - target: {fileID: 8867318172255941819, guid: c0c35a2099babd546b573884f586e9c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6775
+      value: 1.3934
       objectReference: {fileID: 0}
     - target: {fileID: 8867318172255941819, guid: c0c35a2099babd546b573884f586e9c2, type: 3}
       propertyPath: m_LocalPosition.z

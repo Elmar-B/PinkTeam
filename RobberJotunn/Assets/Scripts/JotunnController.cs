@@ -16,6 +16,7 @@ public class JotunnController : MonoBehaviour
     [SerializeField] SpriteRenderer rightHandSprite;
     [SerializeField] SpriteRenderer leftHandSprite;
     public float damageTime;
+    public GameObject sideSpearAttack;
 
     // Health bar:
     public Slider slider;
@@ -88,6 +89,7 @@ public class JotunnController : MonoBehaviour
             Projectile script = projectileSpawner.GetComponent<Projectile>();
             script.attackTime = 10f;
         }
+    
     }
 
     private void JotunnDied()

@@ -11132,38 +11132,14 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 697420052}
-    - target: {fileID: 133836263760608309, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: sideSpearAttack
-      value: 
-      objectReference: {fileID: 967793078363895400, guid: 2672dae0382bc2e46bfe7bf201ffc2a1, type: 3}
-    - target: {fileID: 1225989811719441086, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1961203365372161731, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 910199157}
-    - target: {fileID: 1961203365372161731, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: attackTime
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4440624792830838401, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 910199157}
-    - target: {fileID: 4440624792830838401, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: attackTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5374366950325331935, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6871382445594811032, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: jotunHealth
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7166613318853229171, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -11207,14 +11183,6 @@ PrefabInstance:
     - target: {fileID: 8205473666689712451, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: m_Name
       value: Jotunn
-      objectReference: {fileID: 0}
-    - target: {fileID: 8205473666689712451, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8555319783092063905, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11409,6 +11377,14 @@ PrefabInstance:
     - target: {fileID: 1000636282631654806, guid: 2672dae0382bc2e46bfe7bf201ffc2a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658903633238778155, guid: 2672dae0382bc2e46bfe7bf201ffc2a1, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[17].x
+      value: -0.019495584
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658903633238778155, guid: 2672dae0382bc2e46bfe7bf201ffc2a1, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[17].y
+      value: -1.3070707
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

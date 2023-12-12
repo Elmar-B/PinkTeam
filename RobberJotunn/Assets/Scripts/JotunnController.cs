@@ -21,9 +21,14 @@ public class JotunnController : MonoBehaviour
     // Health bar:
     public Slider slider;
     private float timePassed;
+    private enum State{
+        Phase1, Phase2, Phase3
+    };
+    private State state;
 
     void Awake()
     {
+        state = State.Phase1;
         slider.maxValue = maxHealth;
         health = maxHealth;
         slider.value = health;
@@ -66,35 +71,87 @@ public class JotunnController : MonoBehaviour
 
     void Attack()
     {
-        float rnum = Random.Range(0f, 3f);
-        // Sword swipe
-        if (rnum < 1f)
-        {
-            GameObject swordSwipeAttack = Instantiate(swordSwipeAttackPrefab);
-            SwordSwipeAttackPhysics script = swordSwipeAttack.GetComponent<SwordSwipeAttackPhysics>();
-            script.swing = true;
-            script.startingRotationSpeed = 150;
-            if (rnum > 0.5f)
-                script.rightSwing = true;
-            else
-                script.rightSwing = false;
+        Debug.Log("Phase: "+state);
+        switch(state){
+            case State.Phase1:
+            {
+                float rnum = Random.Range(0f, 3f);
+                // Sword swipe
+                if (rnum < 1f)
+                {
+                    GameObject swordSwipeAttack = Instantiate(swordSwipeAttackPrefab);
+                    SwordSwipeAttackPhysics script = swordSwipeAttack.GetComponent<SwordSwipeAttackPhysics>();
+                    script.swing = true;
+                    script.startingRotationSpeed = 150;
+                    if (rnum > 0.5f)
+                        script.rightSwing = true;
+                    else
+                        script.rightSwing = false;
+                }
+                else if (rnum < 2f)
+                {
+                    GameObject flyingSword = Instantiate(flyingSwordPrefab);
+                }
+                else if (rnum < 3f)
+                {
+                    GameObject projectileSpawner = Instantiate(basicProjectilePrefab);
+                    // Projectile script = projectileSpawner.GetComponent<Projectile>();
+                    // script.attackTime = 10f;
+                }
+                break;
+            }
+            case State.Phase2:
+            {
+                float rnum = Random.Range(0f, 1f);
+                if(rnum < 1f)
+                {
+                    GameObject spearSideAttack = Instantiate(sideSpearAttack);
+                }
+              
+                break;
+            }
+            case State.Phase3:
+            {
+                break;
+            }
+            default: break;
         }
-        else if (rnum < 2f)
-        {
-            GameObject flyingSword = Instantiate(flyingSwordPrefab);
-        }
-        else if (rnum < 3f)
-        {
-            GameObject projectileSpawner = Instantiate(basicProjectilePrefab);
-            Projectile script = projectileSpawner.GetComponent<Projectile>();
-            script.attackTime = 10f;
-        }
+        
     
     }
 
     private void JotunnDied()
     {
-        GameManager.instance.Victory();
+        switch(state){
+            case State.Phase1:
+            {
+                //regenerate jotunn health move to phase 2;
+                state = State.Phase2;
+                slider.maxValue = maxHealth;
+                health = maxHealth;
+                slider.value = health;
+
+                timePassed = 0f;
+                break;
+            }
+            case State.Phase2:
+            {
+                //regenerate jotunn health move to phase 3;
+                state = State.Phase3;
+                slider.maxValue = maxHealth;
+                health = maxHealth;
+                slider.value = health;
+
+                timePassed = 0f;
+                break;
+            }
+            case State.Phase3:
+            {
+                GameManager.instance.Victory();
+                break;
+            }
+        }
+        
     }
 
 

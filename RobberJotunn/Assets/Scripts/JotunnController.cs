@@ -16,6 +16,7 @@ public class JotunnController : MonoBehaviour
     [SerializeField] SpriteRenderer leftHandSprite;
     public float damageTime;
     public GameObject sideSpearAttack;
+    public GameObject threeSpearAttack;
     private JotunnHandsController rightHandController;
     private JotunnHandsController leftHandController;
 
@@ -91,7 +92,7 @@ public class JotunnController : MonoBehaviour
         switch(state){
             case State.Phase1:
             {
-                float rnum = Random.Range(2f, 3f);
+                float rnum = Random.Range(0f, 3f);
                 // Sword swipe
                 if (rnum < 1f)
                 {
@@ -122,10 +123,14 @@ public class JotunnController : MonoBehaviour
             }
             case State.Phase2:
             {
-                float rnum = Random.Range(0f, 1f);
+                float rnum = Random.Range(0f, 2f);
                 if(rnum < 1f)
                 {
                     GameObject spearSideAttack = Instantiate(sideSpearAttack);
+                }
+                else if(rnum < 2f)
+                {
+                    GameObject spearThreeAttack = Instantiate(threeSpearAttack);
                 }
               
                 break;

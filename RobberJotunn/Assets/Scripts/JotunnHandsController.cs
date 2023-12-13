@@ -193,7 +193,7 @@ public class JotunnHandsController : MonoBehaviour
 
                 IcicleController icicleScript = icicle.GetComponent<IcicleController>();
                 icicleScript.angle = i*(360/numIcicles) + offset;
-                icicleScript.velocity = 1f;
+                icicleScript.speed = 1f;
 
                 icicles[i] = icicle;
             }

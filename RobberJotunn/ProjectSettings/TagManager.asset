@@ -9,6 +9,8 @@ TagManager:
   - Damageable
   - FlyingSword
   - Jotunn
+  - Pedastal
+  - Border
   layers:
   - Default
   - TransparentFX

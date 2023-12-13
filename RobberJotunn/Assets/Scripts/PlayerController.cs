@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioSource dashSound;
     [SerializeField] AudioSource damageSound;
     [SerializeField] TrailRenderer trailRenderer;
-
     [Header("Health")]
     [SerializeField] float speed;
     [SerializeField] public int maxHealth;
@@ -29,9 +28,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dashCooldown = 1f;
     private bool isDashing;
     private bool canDash = true;
-    private bool hasWeapon = true;
-    public bool isAttacking = false;
+    private bool hasWeapon;
+    private string weaponType;
+    public bool isAttacking;
     public bool canAttack = true;
+    private bool isAlive = true;
+    public bool cutscene;
 
     void Awake()
     {
@@ -40,16 +42,20 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if (isDashing || takingDamage)
+        if (isAttacking || cutscene)
+        {
+            body.velocity = Vector2.zero;
+            
+            animator.SetFloat("Speed", 0);
+            return;
+        }
+
+        if (isDashing || takingDamage || !isAlive)
         {
             return;
         }
 
-        if (isAttacking)
-        {
-            body.velocity = Vector2.zero;
-            return;
-        }
+        
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -63,7 +69,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.K) && hasWeapon && canAttack)
         {
-            animator.SetTrigger("Attack");
+            animator.SetTrigger(weaponType);
             StartCoroutine(Attack());
         }
 
@@ -75,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isDashing && !takingDamage && !isAttacking)
+        if (!isDashing && !takingDamage && !isAttacking && isAlive && !cutscene)
         {
             body.velocity = movement.normalized * speed;
         }
@@ -90,7 +96,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(TakeDamage());   
             }
             if (health <= 0)
-                PlayerDied();
+                StartCoroutine(PlayerDied());
         }
     }
 
@@ -107,9 +113,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void GiveWeapon()
+    public void GiveWeapon(string weapon)
     {
         hasWeapon = true;
+        weaponType = weapon;
     }
 
     private IEnumerator TakeDamage()
@@ -135,8 +142,12 @@ public class PlayerController : MonoBehaviour
         canTakeDamage = true;
     }
     
-    private void PlayerDied()
+    private IEnumerator PlayerDied()
     {
+        animator.SetTrigger("Death");
+        body.Sleep();
+        isAlive = false;
+        yield return new WaitForSeconds(3);
         GameManager.instance.GameOver();
     }
 

@@ -16,11 +16,11 @@ public class WeaponController : MonoBehaviour
     [SerializeField] AudioSource attackSound;
     [SerializeField] AudioSource damageSound;
     private bool canAttack = true;
+    public string weaponName;
 
     void Start()
     {
-        jotunnController = GameObject.FindGameObjectWithTag("Jotunn").GetComponent<JotunnController>();
-
+        jotunnController = Resources.FindObjectsOfTypeAll<JotunnController>()[0];
     }
 
     void Update()
@@ -45,13 +45,14 @@ public class WeaponController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K) && canAttack)
         {
             StartCoroutine(Attack());
-            animator.SetTrigger("Attack");
+            animator.SetTrigger(weaponName);
         }
     }
 
     public void Damage()
     {
         damageSound.Play();
+        Debug.Log(jotunnController);
         jotunnController.Damage(damage);
     }
 

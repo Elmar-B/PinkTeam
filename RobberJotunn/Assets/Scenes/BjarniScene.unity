@@ -10252,13 +10252,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lightning Bolt
       objectReference: {fileID: 0}
+    - target: {fileID: 6092245149745369868, guid: d9edf7d70c22285418a649e9d91af78b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.32399434
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092245149745369868, guid: d9edf7d70c22285418a649e9d91af78b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.3584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092245149745369868, guid: d9edf7d70c22285418a649e9d91af78b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.35619083
+      objectReference: {fileID: 0}
     - target: {fileID: 6789697434250491042, guid: d9edf7d70c22285418a649e9d91af78b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.776
+      value: 0.285
       objectReference: {fileID: 0}
     - target: {fileID: 6789697434250491042, guid: d9edf7d70c22285418a649e9d91af78b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.269
+      value: -0.788
       objectReference: {fileID: 0}
     - target: {fileID: 6789697434250491042, guid: d9edf7d70c22285418a649e9d91af78b, type: 3}
       propertyPath: m_LocalPosition.z

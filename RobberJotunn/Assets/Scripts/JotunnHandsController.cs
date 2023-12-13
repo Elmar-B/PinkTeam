@@ -184,6 +184,7 @@ public class JotunnHandsController : MonoBehaviour
     {
         if (numIcicles > 0)
         {
+            float offset = Random.Range(0f, 360/numIcicles);
             GameObject[] icicles = new GameObject[numIcicles];
             for (int i = 0; i < numIcicles; i++)
             {
@@ -191,7 +192,7 @@ public class JotunnHandsController : MonoBehaviour
                 icicle.transform.position = transform.position;
 
                 IcicleController icicleScript = icicle.GetComponent<IcicleController>();
-                icicleScript.angle = i*(360/numIcicles);
+                icicleScript.angle = i*(360/numIcicles) + offset;
                 icicleScript.velocity = 1f;
 
                 icicles[i] = icicle;

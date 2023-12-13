@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 767452376390162928}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0058, y: 0.06, z: 0}
-  m_LocalScale: {x: 0.11231802, y: 0.11231802, z: 0.11231802}
+  m_LocalPosition: {x: 0, y: 0.11, z: 0}
+  m_LocalScale: {x: 0.45999998, y: 0.45999998, z: 0.45999998}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 465032497499013812}
@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 3045426462943359600}
   - component: {fileID: 5456932122336829972}
   m_Layer: 0
-  m_Name: AxePedastal
+  m_Name: HammerPedastal
   m_TagString: Pedastal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

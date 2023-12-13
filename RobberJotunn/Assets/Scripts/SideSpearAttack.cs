@@ -13,9 +13,9 @@ public class SideSpearAttack : MonoBehaviour
     private GameObject playerObj;
     private Vector3 playerPos;
 
-    private float y1 = -0.7f;
-    private float y2 = -0.25f;
-    private float y3 = 0.25f;
+    private float y1 = 2.25f;
+    private float y2 = 1.75f;
+    private float y3 = 1.25f;
     private float x1 = -0.95f;
     private float x2 = 0.95f;
 
@@ -53,17 +53,17 @@ public class SideSpearAttack : MonoBehaviour
             // float[] sidefloats = {y1, y2, y3};
             // int randomInt = Random.Range(0,3);
             // y = sidefloats[randomInt];
-            if(playerPos.y > -0.05f)
+            if(playerPos.y > 2.0f)
             {
-                y = y3;
+                y = y1;
             }
-            else if(playerPos.y <= -0.05f && playerPos.y >= -0.4f)
+            else if(playerPos.y <= 2.0f && playerPos.y >= 1.6f)
             {
                 y = y2;
             }
             else
             {
-                y = y1;
+                y = y3;
             }
 
             secondRandomInt = Random.Range(0,2);

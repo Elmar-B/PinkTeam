@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioSource dashSound;
     [SerializeField] AudioSource damageSound;
     [SerializeField] TrailRenderer trailRenderer;
-
     [Header("Health")]
     [SerializeField] float speed;
     [SerializeField] public int maxHealth;
@@ -34,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public bool isAttacking;
     public bool canAttack = true;
     private bool isAlive = true;
+    public bool cutscene;
 
     void Awake()
     {
@@ -42,16 +42,20 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+        if (isAttacking || cutscene)
+        {
+            body.velocity = Vector2.zero;
+            
+            animator.SetFloat("Speed", 0);
+            return;
+        }
+
         if (isDashing || takingDamage || !isAlive)
         {
             return;
         }
 
-        if (isAttacking)
-        {
-            body.velocity = Vector2.zero;
-            return;
-        }
+        
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -77,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isDashing && !takingDamage && !isAttacking)
+        if (!isDashing && !takingDamage && !isAttacking && isAlive && !cutscene)
         {
             body.velocity = movement.normalized * speed;
         }
@@ -130,7 +134,7 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Death");
         body.Sleep();
         isAlive = false;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         GameManager.instance.GameOver();
     }
 

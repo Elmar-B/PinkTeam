@@ -20,7 +20,7 @@ public class WeaponController : MonoBehaviour
 
     void Start()
     {
-        jotunnController = GameObject.FindGameObjectWithTag("Jotunn").GetComponent<JotunnController>();
+        jotunnController = Resources.FindObjectsOfTypeAll<JotunnController>()[0];
     }
 
     void Update()

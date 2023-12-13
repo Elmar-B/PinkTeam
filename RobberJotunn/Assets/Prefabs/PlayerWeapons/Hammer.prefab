@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: -2979147282957248201}
   - component: {fileID: 2326125791479069259}
   m_Layer: 0
-  m_Name: Axe
+  m_Name: Hammer
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
   attackCooldown: 0.15
   attackSound: {fileID: -2979147282957248201}
   damageSound: {fileID: 2326125791479069259}
-  weaponName: Axe
+  weaponName: Hammer
 --- !u!95 &2601707902613443752
 Animator:
   serializedVersion: 5

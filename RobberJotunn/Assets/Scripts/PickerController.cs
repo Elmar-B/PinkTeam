@@ -18,7 +18,21 @@ public class PickerController : MonoBehaviour
 
             string weaponName = weapon.GetComponent<WeaponController>().weaponName;
 
-            player.GetComponent<PlayerController>().GiveWeapon(weaponName);            
+            player.GetComponent<PlayerController>().GiveWeapon(weaponName);
+
+            GameObject[] pedastals = GameObject.FindGameObjectsWithTag("Pedastal");
+
+            foreach (GameObject pedastal in pedastals)
+            {
+                GameObject pedastalWeapon = pedastal.transform.GetChild(0).gameObject;
+                if (!pedastalWeapon.activeSelf)
+                {
+                    pedastalWeapon.SetActive(true);
+                    break;
+                }
+            }
+          
+            transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 

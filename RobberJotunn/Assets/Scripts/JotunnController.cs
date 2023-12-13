@@ -28,6 +28,17 @@ public class JotunnController : MonoBehaviour
         slider.value = health;
 
         timePassed = 0f;
+
+        float rnum = Random.Range(0f, 1f);
+        // Sword swipe
+        GameObject swordSwipeAttack = Instantiate(swordSwipeAttackPrefab);
+        SwordSwipeAttackPhysics script = swordSwipeAttack.GetComponent<SwordSwipeAttackPhysics>();
+        script.swing = true;
+        script.startingRotationSpeed = 150;
+        if (rnum > 0.5f)
+            script.rightSwing = true;
+        else
+            script.rightSwing = false;
     }
 
     public void Damage(int damage)

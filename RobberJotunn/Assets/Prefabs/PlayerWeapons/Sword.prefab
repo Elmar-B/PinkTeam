@@ -324,7 +324,7 @@ MonoBehaviour:
   animator: {fileID: 2601707902613443752}
   jotunnController: {fileID: 0}
   damage: 1
-  attackDuration: 0.25
+  attackDuration: 0.4
   attackCooldown: 0.25
   attackSound: {fileID: -2979147282957248201}
   damageSound: {fileID: 2326125791479069259}

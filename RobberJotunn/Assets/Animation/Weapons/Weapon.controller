@@ -214,8 +214,6 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -342180407249162519}
-  - {fileID: 4551171542632865986}
-  - {fileID: -5208141351195659398}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -262,7 +260,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Weapon
+  m_Name: Spear
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Horizontal
@@ -464,12 +462,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 4474795193186147100}
     m_Position: {x: 290, y: 260, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -7625098353602008582}
-    m_Position: {x: 280, y: -40, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -5875710468861343058}
-    m_Position: {x: 540, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions:
@@ -510,7 +502,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwordAttack
+  m_Name: Attack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 385229811}
   - component: {fileID: 385229812}
   m_Layer: 0
-  m_Name: ControlesMenu
+  m_Name: ControlsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Controles
+  m_text: 'Controls
 
 '
   m_isRightToLeft: 0
@@ -2058,7 +2058,7 @@ GameObject:
   - component: {fileID: 2069985473}
   - component: {fileID: 2069985472}
   m_Layer: 5
-  m_Name: Controles
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

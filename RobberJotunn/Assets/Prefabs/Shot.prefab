@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1807008097679279620}
   - component: {fileID: 4976103694376448878}
   - component: {fileID: 3533552313217507637}
+  - component: {fileID: -6902045985191246409}
   m_Layer: 0
   m_Name: Shot
   m_TagString: Damage
@@ -163,3 +164,15 @@ CircleCollider2D:
   m_Offset: {x: -0.091452636, y: 0.19551933}
   serializedVersion: 2
   m_Radius: 0.3265555
+--- !u!114 &-6902045985191246409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9021927707458898641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4759ca53890509af2b98b9610859d7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

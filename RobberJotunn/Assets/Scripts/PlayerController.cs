@@ -100,7 +100,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void GiveWeapon(string weapon)
+    private void OnParticleCollision(GameObject other){
+        //Debug.Log("Partical Collison");
+        if (other.gameObject.CompareTag("Damage"))
+        {       
+            if (canTakeDamage && !isDashing)
+            {
+                StartCoroutine(TakeDamage());   
+            }
+            if (health <= 0)
+                PlayerDied();
+        }
+    }
+
+    public void GiveWeapon()
     {
         hasWeapon = true;
         weaponType = weapon;

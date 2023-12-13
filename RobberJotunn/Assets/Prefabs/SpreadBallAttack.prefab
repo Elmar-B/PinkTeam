@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 3202504003853811963, guid: 7ff25a017825fd44ab9d311a81073df2, type: 3}
-  velocity: 40
+  velocity: 0.5

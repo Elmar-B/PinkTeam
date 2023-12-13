@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class JotunnHandsController : MonoBehaviour
@@ -7,9 +8,11 @@ public class JotunnHandsController : MonoBehaviour
     public GameObject player;
     public GameObject jotunnHandSmokePrefab;
     public GameObject ShadowPrefab;
+    public GameObject IciclePrefab;
     public float attackOdds;
     public float range;
     public float attackTime;
+    public int numIcicles;
     private SpriteRenderer shadowSprite;
     private GameObject shadowObject;
     private Collider2D triggerCollider;
@@ -154,6 +157,7 @@ public class JotunnHandsController : MonoBehaviour
         state = State.Resting;
 
         triggerCollider.enabled = true;
+        IcicleAttack();
         SplashEffect();
 
         shadowSprite.enabled = false;
@@ -174,6 +178,26 @@ public class JotunnHandsController : MonoBehaviour
     {
         GameObject jotunnHandSmoke = Instantiate(jotunnHandSmokePrefab);
         jotunnHandSmoke.transform.position = transform.position - (Vector3.down * -0.2f);
+    }
+
+    private void IcicleAttack()
+    {
+        if (numIcicles > 0)
+        {
+            GameObject[] icicles = new GameObject[numIcicles];
+            for (int i = 0; i < numIcicles; i++)
+            {
+                GameObject icicle = Instantiate(IciclePrefab);
+                icicle.transform.position = transform.position;
+
+                IcicleController icicleScript = icicle.GetComponent<IcicleController>();
+                icicleScript.angle = i*(360/numIcicles);
+                icicleScript.velocity = 1f;
+
+                icicles[i] = icicle;
+            }
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D other)

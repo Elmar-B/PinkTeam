@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IcicleController : MonoBehaviour
 {
-    public float velocity;
+    public float speed;
     public float angle;
     public float aliveDuration;
     private Rigidbody2D body;
@@ -25,7 +25,7 @@ public class IcicleController : MonoBehaviour
             Destroy(gameObject);
         if (!isMoving)
         {
-            body.velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad*angle), Mathf.Sin(Mathf.Deg2Rad*angle)) * velocity;
+            body.velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad*angle), Mathf.Sin(Mathf.Deg2Rad*angle)) * speed;
             Debug.Log(angle);
             isMoving = true;
         }

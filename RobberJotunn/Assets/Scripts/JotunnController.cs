@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class JotunnController : MonoBehaviour
     private float health;
     public GameObject swordSwipeAttackPrefab;
     public GameObject flyingSwordPrefab;
-    public GameObject basicProjectilePrefab;
+    public GameObject iciclePrefab;
     [SerializeField] SpriteRenderer bodySprite;
     [SerializeField] SpriteRenderer rightHandSprite;
     [SerializeField] SpriteRenderer leftHandSprite;
@@ -90,7 +91,7 @@ public class JotunnController : MonoBehaviour
         switch(state){
             case State.Phase1:
             {
-                float rnum = Random.Range(0f, 3f);
+                float rnum = Random.Range(2f, 3f);
                 // Sword swipe
                 if (rnum < 1f)
                 {
@@ -109,9 +110,13 @@ public class JotunnController : MonoBehaviour
                 }
                 else if (rnum < 3f)
                 {
-                    GameObject projectileSpawner = Instantiate(basicProjectilePrefab);
-                    // Projectile script = projectileSpawner.GetComponent<Projectile>();
-                    // script.attackTime = 10f;
+                    GameObject icicleObject = Instantiate(iciclePrefab);
+                    icicleObject.transform.position = new Vector3(Random.Range(-0.18f, 0.18f), 1.1f, 0);
+
+                    IcicleController icicleController = icicleObject.GetComponent<IcicleController>();
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    Vector3 direction = icicleObject.transform.position - player.transform.position;
+                    icicleController.angle = Vector2.SignedAngle(Vector3.up, direction) - 90f;
                 }
                 break;
             }

@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void GiveWeapon()
+    public void GiveWeapon(string weapon)
     {
         hasWeapon = true;
         weaponType = weapon;

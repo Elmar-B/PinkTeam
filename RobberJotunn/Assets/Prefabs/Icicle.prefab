@@ -161,6 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4759ca53890509af2b98b9610859d7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 0
-  direction: {x: 0, y: 0, z: 0}
+  speed: 1
+  angle: 0
   aliveDuration: 8

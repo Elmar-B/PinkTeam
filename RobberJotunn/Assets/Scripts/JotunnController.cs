@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.AssetImporters;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +15,8 @@ public class JotunnController : MonoBehaviour
     [SerializeField] SpriteRenderer leftHandSprite;
     public float damageTime;
     public GameObject sideSpearAttack;
+    private JotunnHandsController rightHandController;
+    private JotunnHandsController leftHandController;
 
     // Health bar:
     public Slider slider;
@@ -28,10 +28,13 @@ public class JotunnController : MonoBehaviour
 
     void Awake()
     {
-        state = State.Phase2;
+        state = State.Phase1;
         slider.maxValue = maxHealth;
         health = maxHealth;
         slider.value = health;
+
+        rightHandController = transform.Find("RightHand").gameObject.GetComponent<JotunnHandsController>();
+        leftHandController = transform.Find("LeftHand").gameObject.GetComponent<JotunnHandsController>();
 
         timePassed = 0f;
     }
@@ -130,6 +133,10 @@ public class JotunnController : MonoBehaviour
                 slider.maxValue = maxHealth;
                 health = maxHealth;
                 slider.value = health;
+
+                // Add icicles to hand attack
+                rightHandController.numIcicles = 8;
+                leftHandController.numIcicles = 8;
 
                 timePassed = 0f;
                 break;

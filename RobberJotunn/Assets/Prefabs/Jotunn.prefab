@@ -204,9 +204,11 @@ MonoBehaviour:
   player: {fileID: 0}
   jotunnHandSmokePrefab: {fileID: 6707384737636007027, guid: 05a779a04da69f14cbefe7f9f07a7125, type: 3}
   ShadowPrefab: {fileID: 78599764112593772, guid: 23d36e421e8ac38c291a9569bf634018, type: 3}
+  IciclePrefab: {fileID: 2321000906108373071, guid: 7d991254040c3f312ae921baf2d11d54, type: 3}
   attackOdds: 0.1
   range: 0.3
   attackTime: 1
+  numIcicles: 0
 --- !u!1 &5286908020402304527
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,9 +497,11 @@ MonoBehaviour:
   player: {fileID: 0}
   jotunnHandSmokePrefab: {fileID: 6707384737636007027, guid: 05a779a04da69f14cbefe7f9f07a7125, type: 3}
   ShadowPrefab: {fileID: 78599764112593772, guid: 23d36e421e8ac38c291a9569bf634018, type: 3}
+  IciclePrefab: {fileID: 2321000906108373071, guid: 7d991254040c3f312ae921baf2d11d54, type: 3}
   attackOdds: 0.1
   range: 0.3
   attackTime: 1
+  numIcicles: 0
 --- !u!1 &7742976408949850711
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,5 +626,4 @@ MonoBehaviour:
   leftHandSprite: {fileID: 1225989811719441086}
   damageTime: 0.3
   sideSpearAttack: {fileID: 967793078363895400, guid: 2672dae0382bc2e46bfe7bf201ffc2a1, type: 3}
-  normalSpearAttack: {fileID: 488707002386888971, guid: 520b66892ddfc4f47847c758cf483838, type: 3}
   slider: {fileID: 0}

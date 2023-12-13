@@ -79,10 +79,10 @@ public class JotunnController : MonoBehaviour
     void FixedUpdate()
     {
         timePassed += Time.deltaTime;
-        if (timePassed > 6f)
+        if (timePassed > 4f)
         {
-            Attack();
             timePassed = 0f;
+            Attack();
         }
     }
 
@@ -108,16 +108,21 @@ public class JotunnController : MonoBehaviour
                 else if (rnum < 2f)
                 {
                     GameObject flyingSword = Instantiate(flyingSwordPrefab);
+                    // Next attack quicker to arive
+                    timePassed += 1f;
                 }
                 else if (rnum < 3f)
                 {
                     GameObject icicleObject = Instantiate(iciclePrefab);
-                    icicleObject.transform.position = new Vector3(Random.Range(-0.18f, 0.18f), 1.1f, 0);
+                    icicleObject.transform.position = new Vector3(Random.Range(-0.18f, 0.18f), 0.6f, 0) + transform.position;
 
                     IcicleController icicleController = icicleObject.GetComponent<IcicleController>();
                     GameObject player = GameObject.FindGameObjectWithTag("Player");
                     Vector3 direction = icicleObject.transform.position - player.transform.position;
                     icicleController.angle = Vector2.SignedAngle(Vector3.up, direction) - 90f;
+
+                    // Next attack quicker to arive
+                    timePassed += 2f;
                 }
                 break;
             }

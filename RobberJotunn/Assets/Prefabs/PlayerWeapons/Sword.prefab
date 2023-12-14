@@ -323,8 +323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2601707902613443752}
   jotunnController: {fileID: 0}
-  damage: 1
-  attackDuration: 0.4
+  damage: 2
+  attackDuration: 0.45
   attackCooldown: 0.25
   attackSound: {fileID: -2979147282957248201}
   damageSound: {fileID: 2326125791479069259}
@@ -464,7 +464,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 0
+  Priority: 1
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

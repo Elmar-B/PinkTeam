@@ -48,6 +48,10 @@ public class JotunnController : MonoBehaviour
             script.rightSwing = true;
         else
             script.rightSwing = false;
+
+        Debug.Log("test");
+            
+        GameManager.instance.backgroundMusic.Play();
     }
 
     public void Damage(int damage)

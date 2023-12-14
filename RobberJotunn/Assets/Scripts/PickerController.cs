@@ -4,6 +4,7 @@ public class PickerController : MonoBehaviour
     public GameObject weapon;
     public GameObject player;
     public SpriteRenderer weaponRenderer;
+    public AudioSource sound;
     private bool playerInRange = false;
     void Update()
     {
@@ -16,9 +17,9 @@ public class PickerController : MonoBehaviour
             weaponObject.transform.parent = player.transform;
             weaponObject.transform.localScale = new Vector3(1, 1, 1);
 
-            string weaponName = weapon.GetComponent<WeaponController>().weaponName;
+            WeaponController weaponController = weaponObject.GetComponent<WeaponController>();
 
-            player.GetComponent<PlayerController>().GiveWeapon(weaponName);
+            player.GetComponent<PlayerController>().GiveWeapon(weaponController);
 
             GameObject[] pedastals = GameObject.FindGameObjectsWithTag("Pedastal");
 
@@ -33,6 +34,8 @@ public class PickerController : MonoBehaviour
             }
           
             transform.GetChild(0).gameObject.SetActive(false);
+
+            sound.Play();
         }
     }
 

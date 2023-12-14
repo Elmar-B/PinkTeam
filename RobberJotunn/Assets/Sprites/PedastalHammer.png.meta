@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de7ce20a29d41b1428589f196a1be7d6
+guid: 6868b30fc5f15d34da0188dda28c0a80
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pedastal_0
+      name: PedastalHammer_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 4
-        width: 13
-        height: 14
+        x: 7
+        y: 5
+        width: 19
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbfda1dad99a43948b892a111ae29b79
-      internalID: -1891573443
+      spriteID: 78f39cb0f441173479e9d26c87461629
+      internalID: 1450689679
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pedastal_0: -1891573443
+      PedastalHammer_0: 1450689679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

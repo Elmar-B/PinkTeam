@@ -205,6 +205,7 @@ MonoBehaviour:
   jotunnHandSmokePrefab: {fileID: 6707384737636007027, guid: 05a779a04da69f14cbefe7f9f07a7125, type: 3}
   ShadowPrefab: {fileID: 78599764112593772, guid: 23d36e421e8ac38c291a9569bf634018, type: 3}
   IciclePrefab: {fileID: 2321000906108373071, guid: 7d991254040c3f312ae921baf2d11d54, type: 3}
+  fistSound: {fileID: 8278384735724840783}
   attackOdds: 0.1
   range: 0.3
   attackTime: 1
@@ -498,6 +499,7 @@ MonoBehaviour:
   jotunnHandSmokePrefab: {fileID: 6707384737636007027, guid: 05a779a04da69f14cbefe7f9f07a7125, type: 3}
   ShadowPrefab: {fileID: 78599764112593772, guid: 23d36e421e8ac38c291a9569bf634018, type: 3}
   IciclePrefab: {fileID: 2321000906108373071, guid: 7d991254040c3f312ae921baf2d11d54, type: 3}
+  fistSound: {fileID: 8278384735724840783}
   attackOdds: 0.1
   range: 0.3
   attackTime: 1
@@ -579,6 +581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7166613318853229171}
   - component: {fileID: 133836263760608309}
+  - component: {fileID: 8278384735724840783}
   m_Layer: 0
   m_Name: Jotunn
   m_TagString: Jotunn
@@ -630,3 +633,99 @@ MonoBehaviour:
   bigHammerAttack: {fileID: 8665550532922613480, guid: 7ae106fccc73d5a47b518ef2cd175575, type: 3}
   lightingAttack: {fileID: 1368350561430039564, guid: ad6c4263031cb8b47a8308f37142f1c5, type: 3}
   slider: {fileID: 0}
+--- !u!82 &8278384735724840783
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8205473666689712451}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fa2d636c71f26a149b9e40c9fb9c539b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

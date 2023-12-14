@@ -43,7 +43,10 @@ public class JotunnController : MonoBehaviour
         leftHandController = transform.Find("LeftHand").gameObject.GetComponent<JotunnHandsController>();
 
         timePassed = 0f;
+    }
 
+    public void FirstAttack()
+    {
         float rnum = Random.Range(0f, 1f);
         // Sword swipe
         GameObject swordSwipeAttack = Instantiate(swordSwipeAttackPrefab);
@@ -54,6 +57,10 @@ public class JotunnController : MonoBehaviour
             script.rightSwing = true;
         else
             script.rightSwing = false;
+            
+        GameManager.instance.backgroundMusic.Play();
+        GameManager.instance.snowSound.Stop();
+        slider.gameObject.SetActive(true);
     }
 
     public void Damage(int damage)

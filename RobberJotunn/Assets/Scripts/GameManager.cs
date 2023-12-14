@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
 {
     // Singelton
     public static GameManager instance;
-    public AudioSource BackgroundMusic;
+    public AudioSource backgroundMusic;
+    public AudioSource snowSound;
     private bool running;
     
     private void Awake ()
@@ -17,12 +18,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         running = true;
     }
-
-    void Start()
-    {
-        BackgroundMusic.Play();
-    }
-
+    
     void Update()
     {
     }
@@ -40,7 +36,8 @@ public class GameManager : MonoBehaviour
             running = false;
             _ui.ToggleDeathPanel();
         }
-        BackgroundMusic.Stop();
+        backgroundMusic.Stop();
+        snowSound.Play();
     }
 
     public void Victory()
@@ -52,6 +49,7 @@ public class GameManager : MonoBehaviour
             running = false;
             _ui.ToggleVictoryPanel();
         }
-        BackgroundMusic.Stop();
+        backgroundMusic.Stop();
+        snowSound.Play();
     }
 }

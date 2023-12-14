@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour
     private bool isDashing;
     private bool canDash = true;
     private bool hasWeapon;
-    private string weaponType;
+    private WeaponController weaponController;
+    private Animator weaponAnimator;
     public bool isAttacking;
     public bool canAttack = true;
     private bool isAlive = true;
@@ -55,7 +56,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        
+        if (weaponController)
+            weaponAnimator = weaponController.GetComponent<Animator>();
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -64,13 +66,34 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetFloat("Horizontal", movement.x);
             animator.SetFloat("Vertical", movement.y);
+
+            if (weaponAnimator)
+            {
+                if (Math.Abs(movement.x) == Math.Abs(movement.y))
+                {
+                    weaponAnimator.SetFloat("Horizontal", 0);
+                    weaponAnimator.SetFloat("Vertical", movement.y);
+                }
+                else
+                {
+                    weaponAnimator.SetFloat("Horizontal", movement.x);
+                    weaponAnimator.SetFloat("Vertical", movement.y);
+                }
+            }
+            
         }
         animator.SetFloat("Speed", movement.sqrMagnitude);
         
         if (Input.GetKeyDown(KeyCode.K) && hasWeapon && canAttack)
         {
-            animator.SetTrigger(weaponType);
+            animator.SetTrigger(weaponController.weaponName);
             StartCoroutine(Attack());
+
+            if (weaponAnimator)
+            {
+                weaponAnimator.SetTrigger(weaponController.weaponName);
+                StartCoroutine(weaponController.Attack());
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && canDash && movement != Vector2.zero)
@@ -87,10 +110,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Damage"))
         {       
+            Debug.Log(other);
             if (canTakeDamage && !isDashing)
             {
                 StartCoroutine(TakeDamage());   
@@ -101,7 +125,6 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnParticleCollision(GameObject other){
-        //Debug.Log("Partical Collison");
         if (other.gameObject.CompareTag("Damage"))
         {       
             if (canTakeDamage && !isDashing)
@@ -113,10 +136,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void GiveWeapon(string weapon)
+    public void GiveWeapon(WeaponController weapon)
     {
         hasWeapon = true;
-        weaponType = weapon;
+        weaponController = weapon;
     }
 
     private IEnumerator TakeDamage()

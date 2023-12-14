@@ -9,6 +9,7 @@ public class JotunnHandsController : MonoBehaviour
     public GameObject jotunnHandSmokePrefab;
     public GameObject ShadowPrefab;
     public GameObject IciclePrefab;
+    public AudioSource fistSound;
     public float attackOdds;
     public float range;
     public float attackTime;
@@ -154,6 +155,7 @@ public class JotunnHandsController : MonoBehaviour
 
     private void Strike()
     {
+        fistSound.Play();
         state = State.Resting;
 
         triggerCollider.enabled = true;

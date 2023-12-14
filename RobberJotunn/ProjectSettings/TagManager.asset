@@ -11,6 +11,7 @@ TagManager:
   - Jotunn
   - Pedastal
   - Border
+  - Breakable
   layers:
   - Default
   - TransparentFX

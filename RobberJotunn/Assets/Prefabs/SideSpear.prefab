@@ -218,12 +218,16 @@ PrefabInstance:
       value: SpearWarning
       objectReference: {fileID: 0}
     - target: {fileID: 8867318172255941819, guid: c0c35a2099babd546b573884f586e9c2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30.781918
+      objectReference: {fileID: 0}
+    - target: {fileID: 8867318172255941819, guid: c0c35a2099babd546b573884f586e9c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0004
       objectReference: {fileID: 0}
     - target: {fileID: 8867318172255941819, guid: c0c35a2099babd546b573884f586e9c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3934
+      value: -4.9688
       objectReference: {fileID: 0}
     - target: {fileID: 8867318172255941819, guid: c0c35a2099babd546b573884f586e9c2, type: 3}
       propertyPath: m_LocalPosition.z

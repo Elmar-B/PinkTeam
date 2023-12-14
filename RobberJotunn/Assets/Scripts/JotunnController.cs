@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -19,6 +20,8 @@ public class JotunnController : MonoBehaviour
     public GameObject threeSpearAttack;
     private JotunnHandsController rightHandController;
     private JotunnHandsController leftHandController;
+    public GameObject bigHammerAttack;
+    private bool hammerIsAttacking = false;
 
     // Health bar:
     public Slider slider;
@@ -144,6 +147,13 @@ public class JotunnController : MonoBehaviour
             }
             case State.Phase3:
             {
+                // float rnum = Random.Range(0f,1f);
+                
+                if(!hammerIsAttacking)
+                {
+                    GameObject hammerBigAttack = Instantiate(bigHammerAttack);
+                    hammerIsAttacking = true;
+                }
                 break;
             }
             default: break;

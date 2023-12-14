@@ -116,6 +116,8 @@ public class JotunnController : MonoBehaviour
                     GameObject icicleObject = Instantiate(iciclePrefab);
                     icicleObject.transform.position = new Vector3(Random.Range(-0.18f, 0.18f), 0.6f, 0) + transform.position;
 
+                    icicleObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+
                     IcicleController icicleController = icicleObject.GetComponent<IcicleController>();
                     GameObject player = GameObject.FindGameObjectWithTag("Player");
                     Vector3 direction = icicleObject.transform.position - player.transform.position;

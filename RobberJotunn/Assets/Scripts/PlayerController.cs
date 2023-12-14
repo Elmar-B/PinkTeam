@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(TakeDamage());   
             }
             if (health <= 0)
-                PlayerDied();
+                StartCoroutine(PlayerDied());
         }
     }
 

@@ -12,6 +12,7 @@ public class LightningScript : MonoBehaviour
     {
         // Call SummonStrike every delayTimer second repete n
         InvokeRepeating("SummonStrike",2.0f,delayTimer);
+        InvokeRepeating("StrikeOnPlayer",6.0f,3.0f);
     }
 
     private void SummonStrike(){
@@ -19,5 +20,11 @@ public class LightningScript : MonoBehaviour
         float xAxis = Random.Range(1.5f, -1.5f);
         GameObject lightning = Instantiate(lightningStrike);
         lightning.transform.position = new Vector3(xAxis,yAxis,0);
+    }
+
+    private void StrikeOnPlayer(){
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject lightning = Instantiate(lightningStrike);
+        lightning.transform.position = player.transform.position;
     }
 }

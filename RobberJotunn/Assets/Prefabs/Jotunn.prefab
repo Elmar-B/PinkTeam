@@ -631,7 +631,7 @@ MonoBehaviour:
   sideSpearAttack: {fileID: 967793078363895400, guid: 2672dae0382bc2e46bfe7bf201ffc2a1, type: 3}
   threeSpearAttack: {fileID: 133776986773133278, guid: ec6cffb57724a4b479114d3acc64ff31, type: 3}
   bigHammerAttack: {fileID: 8665550532922613480, guid: 7ae106fccc73d5a47b518ef2cd175575, type: 3}
-  lightingAttack: {fileID: 0}
+  lightingAttack: {fileID: 1368350561430039564, guid: ad6c4263031cb8b47a8308f37142f1c5, type: 3}
   slider: {fileID: 0}
 --- !u!82 &8278384735724840783
 AudioSource:

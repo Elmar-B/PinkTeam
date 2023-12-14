@@ -3278,6 +3278,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3404678727824854294, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3947480656793935612, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: jotunnController
       value: 
@@ -3333,6 +3337,10 @@ PrefabInstance:
     - target: {fileID: 7219720819977323203, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7219720819977323203, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7570798793714365691, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: jotunnController
@@ -8704,7 +8712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1368350561430039564, guid: ad6c4263031cb8b47a8308f37142f1c5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2736690859490502581, guid: ad6c4263031cb8b47a8308f37142f1c5, type: 3}
       propertyPath: m_LocalPosition.x

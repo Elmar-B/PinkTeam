@@ -38,13 +38,13 @@ public class SideSpearAttack : MonoBehaviour
             // x = floats[randomInt];
 
             direction = new Vector3(0, -1, 0);
-            transform.position = new Vector3(x2, 4, 0);
+            transform.position = new Vector3(x2, 6, 0);
             transform.eulerAngles = new Vector3(0,0,180);
         }
         else if(playerPos.x < -0.67f && playerPos.x > -1.23f)
         {
             direction = new Vector3(0, -1, 0);
-            transform.position = new Vector3(x1, 4, 0);
+            transform.position = new Vector3(x1, 6, 0);
             transform.eulerAngles = new Vector3(0,0,180);
         }
 

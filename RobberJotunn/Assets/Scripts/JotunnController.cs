@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -19,6 +20,8 @@ public class JotunnController : MonoBehaviour
     public GameObject threeSpearAttack;
     private JotunnHandsController rightHandController;
     private JotunnHandsController leftHandController;
+    public GameObject bigHammerAttack;
+    private bool hammerIsAttacking = false;
 
     // Health bar:
     public Slider slider;
@@ -116,6 +119,8 @@ public class JotunnController : MonoBehaviour
                     GameObject icicleObject = Instantiate(iciclePrefab);
                     icicleObject.transform.position = new Vector3(Random.Range(-0.18f, 0.18f), 0.6f, 0) + transform.position;
 
+                    icicleObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+
                     IcicleController icicleController = icicleObject.GetComponent<IcicleController>();
                     GameObject player = GameObject.FindGameObjectWithTag("Player");
                     Vector3 direction = icicleObject.transform.position - player.transform.position;
@@ -142,6 +147,13 @@ public class JotunnController : MonoBehaviour
             }
             case State.Phase3:
             {
+                // float rnum = Random.Range(0f,1f);
+                
+                if(!hammerIsAttacking)
+                {
+                    GameObject hammerBigAttack = Instantiate(bigHammerAttack);
+                    hammerIsAttacking = true;
+                }
                 break;
             }
             default: break;

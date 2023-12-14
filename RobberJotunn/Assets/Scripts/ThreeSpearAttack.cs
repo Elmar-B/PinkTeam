@@ -17,6 +17,9 @@ public class ThreeSpearAttack : MonoBehaviour
     private Rigidbody2D spear2RigidBody;
     private Rigidbody2D spear3RigidBody;
     public float velocity;
+    private bool minus = false;
+    private Vector3 spear2Direction;
+    private Vector3 spear3Direction;
 
     void Start()
     {
@@ -24,8 +27,10 @@ public class ThreeSpearAttack : MonoBehaviour
         playerPos = playerObj.transform.position;
         float rnum = Random.Range(0f, 2f);
         if(rnum < 1f)
+        {
+            minus = true;
             transform.position = new(-transform.position.x, transform.position.y, transform.position.z);
-   
+        }
         direction = (playerPos - transform.position).normalized;
         spear1RigidBody = spear1.GetComponent<Rigidbody2D>();
         spear1RigidBody.velocity = direction * velocity;
@@ -46,8 +51,17 @@ public class ThreeSpearAttack : MonoBehaviour
     	{
             spear2 = Instantiate(spear1);
             spear3 = Instantiate(spear1);
-            Vector3 spear2Direction = new Vector3(direction.x+0.2f, direction.y+0.2f, direction.z);
-            Vector3 spear3Direction = new Vector3(direction.x-0.2f, direction.y-0.2f, direction.z);
+            if(minus)
+            {
+                spear2Direction = new Vector3(direction.x-0.2f, direction.y+0.2f, direction.z);
+                spear3Direction = new Vector3(direction.x+0.2f, direction.y-0.2f, direction.z);
+            }
+            else
+            {
+                spear2Direction = new Vector3(direction.x+0.2f, direction.y+0.2f, direction.z);
+                spear3Direction = new Vector3(direction.x-0.2f, direction.y-0.2f, direction.z);
+            }
+            
             
             spear2.transform.position = new(spear1.transform.position.x,spear1.transform.position.y,spear1.transform.position.z);
             spear3.transform.position = new(spear1.transform.position.x,spear1.transform.position.y,spear1.transform.position.z);

@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Damage"))
         {       
+            Debug.Log(other);
             if (canTakeDamage && !isDashing)
             {
                 StartCoroutine(TakeDamage());   
@@ -124,7 +125,6 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnParticleCollision(GameObject other){
-        //Debug.Log("Partical Collison");
         if (other.gameObject.CompareTag("Damage"))
         {       
             if (canTakeDamage && !isDashing)

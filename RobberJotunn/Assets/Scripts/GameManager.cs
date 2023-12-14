@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
             _ui.ToggleDeathPanel();
         }
         backgroundMusic.Stop();
+        snowSound.Play();
     }
 
     public void Victory()
@@ -49,5 +50,6 @@ public class GameManager : MonoBehaviour
             _ui.ToggleVictoryPanel();
         }
         backgroundMusic.Stop();
+        snowSound.Play();
     }
 }

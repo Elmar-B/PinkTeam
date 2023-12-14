@@ -15,7 +15,6 @@ public class WeaponController : MonoBehaviour
     [SerializeField] public float attackCooldown;
     [SerializeField] AudioSource attackSound;
     [SerializeField] AudioSource damageSound;
-    private bool canAttack = true;
     public string weaponName;
 
     void Start()
@@ -32,10 +31,7 @@ public class WeaponController : MonoBehaviour
     public IEnumerator Attack()
     {
         attackSound.Play();
-        canAttack = false;
 
         yield return new WaitForSeconds(attackDuration + attackCooldown);
-
-        canAttack = true;
     }
 }

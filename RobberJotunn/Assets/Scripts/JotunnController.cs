@@ -1,5 +1,7 @@
+
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,14 +11,18 @@ public class JotunnController : MonoBehaviour
     private float health;
     public GameObject swordSwipeAttackPrefab;
     public GameObject flyingSwordPrefab;
-    public GameObject basicProjectilePrefab;
+    public GameObject iciclePrefab;
     [SerializeField] SpriteRenderer bodySprite;
     [SerializeField] SpriteRenderer rightHandSprite;
     [SerializeField] SpriteRenderer leftHandSprite;
     public float damageTime;
     public GameObject sideSpearAttack;
+    public GameObject threeSpearAttack;
     private JotunnHandsController rightHandController;
     private JotunnHandsController leftHandController;
+    public GameObject bigHammerAttack;
+    private bool hammerIsAttacking = false;
+    public GameObject lightingAttack;
 
     // Health bar:
     public Slider slider;
@@ -28,7 +34,7 @@ public class JotunnController : MonoBehaviour
 
     void Awake()
     {
-        state = State.Phase1;
+        state = State.Phase3;
         slider.maxValue = maxHealth;
         health = maxHealth;
         slider.value = health;
@@ -81,10 +87,10 @@ public class JotunnController : MonoBehaviour
     void FixedUpdate()
     {
         timePassed += Time.deltaTime;
-        if (timePassed > 6f)
+        if (timePassed > 4f)
         {
-            Attack();
             timePassed = 0f;
+            Attack();
         }
     }
 
@@ -110,27 +116,53 @@ public class JotunnController : MonoBehaviour
                 else if (rnum < 2f)
                 {
                     GameObject flyingSword = Instantiate(flyingSwordPrefab);
+                    // Next attack quicker to arive
+                    timePassed += 1f;
                 }
                 else if (rnum < 3f)
                 {
-                    GameObject projectileSpawner = Instantiate(basicProjectilePrefab);
-                    // Projectile script = projectileSpawner.GetComponent<Projectile>();
-                    // script.attackTime = 10f;
+                    GameObject icicleObject = Instantiate(iciclePrefab);
+                    icicleObject.transform.position = new Vector3(Random.Range(-0.18f, 0.18f), 0.6f, 0) + transform.position;
+
+                    icicleObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+
+                    IcicleController icicleController = icicleObject.GetComponent<IcicleController>();
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    Vector3 direction = icicleObject.transform.position - player.transform.position;
+                    icicleController.angle = Vector2.SignedAngle(Vector3.up, direction) - 90f;
+
+                    // Next attack quicker to arive
+                    timePassed += 2f;
                 }
                 break;
             }
             case State.Phase2:
             {
-                float rnum = Random.Range(0f, 1f);
+                float rnum = Random.Range(0f, 2f);
                 if(rnum < 1f)
                 {
                     GameObject spearSideAttack = Instantiate(sideSpearAttack);
+                }
+                else if(rnum < 2f)
+                {
+                    GameObject spearThreeAttack = Instantiate(threeSpearAttack);
                 }
               
                 break;
             }
             case State.Phase3:
             {
+                float rnum = Random.Range(0f,1f);
+                
+                if(!hammerIsAttacking)
+                {
+                    GameObject hammerBigAttack = Instantiate(bigHammerAttack);
+                    hammerIsAttacking = true;
+                    GameObject lighting = Instantiate(lightingAttack);
+                    lighting.SetActive(true);
+                    
+                }
+                
                 break;
             }
             default: break;

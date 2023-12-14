@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightningStrike: {fileID: 546127992839086025, guid: d9edf7d70c22285418a649e9d91af78b, type: 3}
-  delayTimer: 0.8
+  delayTimer: 0.4

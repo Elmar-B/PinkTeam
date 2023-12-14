@@ -22,6 +22,7 @@ public class JotunnController : MonoBehaviour
     private JotunnHandsController leftHandController;
     public GameObject bigHammerAttack;
     private bool hammerIsAttacking = false;
+    public GameObject lightingAttack;
 
     // Health bar:
     public Slider slider;
@@ -33,7 +34,7 @@ public class JotunnController : MonoBehaviour
 
     void Awake()
     {
-        state = State.Phase1;
+        state = State.Phase3;
         slider.maxValue = maxHealth;
         health = maxHealth;
         slider.value = health;
@@ -147,13 +148,17 @@ public class JotunnController : MonoBehaviour
             }
             case State.Phase3:
             {
-                // float rnum = Random.Range(0f,1f);
+                float rnum = Random.Range(0f,1f);
                 
                 if(!hammerIsAttacking)
                 {
                     GameObject hammerBigAttack = Instantiate(bigHammerAttack);
                     hammerIsAttacking = true;
+                    GameObject lighting = Instantiate(lightingAttack);
+                    lighting.SetActive(true);
+                    
                 }
+                
                 break;
             }
             default: break;

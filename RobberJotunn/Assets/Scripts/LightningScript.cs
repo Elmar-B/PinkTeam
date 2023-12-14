@@ -15,7 +15,7 @@ public class LightningScript : MonoBehaviour
     }
 
     private void SummonStrike(){
-        float yAxis = Random.Range(0.5f, -1.0f);
+        float yAxis = Random.Range(2.5f, 0.85f);
         float xAxis = Random.Range(1.5f, -1.5f);
         GameObject lightning = Instantiate(lightningStrike);
         lightning.transform.position = new Vector3(xAxis,yAxis,0);

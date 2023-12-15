@@ -76,7 +76,7 @@ public class BigHammer : MonoBehaviour
         this.returnTime = returnTime;
         hammerReturning = true;
         startPosition = transform.position;
-        gameObject.GetComponent<Collider2D>().tag = "Mjolnir";
+        gameObject.GetComponent<Collider2D>().enabled = false;
         timePassed = 0;
     }
 }

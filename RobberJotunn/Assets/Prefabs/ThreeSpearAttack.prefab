@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spear1: {fileID: 645998416814271957}
-  timeToSplit: 1
+  timeToSplit: 0.5
   timeToDestroy: 10
   velocity: 1
 --- !u!1 &645998416814271957

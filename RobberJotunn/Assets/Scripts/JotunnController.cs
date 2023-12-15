@@ -37,7 +37,7 @@ public class JotunnController : MonoBehaviour
 
     void Awake()
     {
-        state = State.Phase1;
+        state = State.Phase2;
         slider.maxValue = maxHealth;
         health = maxHealth;
         slider.value = health;
@@ -93,7 +93,7 @@ public class JotunnController : MonoBehaviour
     void FixedUpdate()
     {
         timePassed += Time.deltaTime;
-        if (timePassed > 4f)
+        if (timePassed > 5f)
         {
             timePassed = 0f;
             Attack();
@@ -195,7 +195,7 @@ public class JotunnController : MonoBehaviour
                 rightHandController.numIcicles = 8;
                 leftHandController.numIcicles = 8;
 
-                timePassed = 0f;
+                //timePassed = 4f;
                 break;
             }
             case State.Phase2:
@@ -208,7 +208,7 @@ public class JotunnController : MonoBehaviour
                 health = maxHealth;
                 slider.value = health;
 
-                timePassed = 0f;
+                //timePassed = 4f;
                 break;
             }
             case State.Phase3:

@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: thor-hammer_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 15
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: 0.76666665, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46712f40eddb5bd45a369142ecb16374
+      internalID: -1627300107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 15
+        width: 9
+        height: 18
+      alignment: 9
+      pivot: {x: 0.7222222, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d431b89139562b469e650f36f71b1aa
+      internalID: -1256020984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_2
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 10
+        width: 12
+        height: 23
+      alignment: 9
+      pivot: {x: 0.7083333, y: 0.6086956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7ad4d35f9a0ad4ba892c27f79f36b7
+      internalID: -480747452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 8
+        width: 11
+        height: 25
+      alignment: 9
+      pivot: {x: 0.6818182, y: 0.64}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a815a744cf74d5845861b1cbd49edb01
+      internalID: -1566445110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_4
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 10
+        width: 10
+        height: 23
+      alignment: 9
+      pivot: {x: 0.65, y: 0.6086956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5722fd514288b46418bebb7b98c62277
+      internalID: 1210065305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 15
+        width: 9
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb47e066d2a6b4f43bfcfb14efae55b6
+      internalID: 320391995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_6
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 15
+        width: 9
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 041f4be1d75855e4a87c4ac7fc9d6961
+      internalID: -856855368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_7
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 15
+        width: 10
+        height: 23
+      alignment: 9
+      pivot: {x: 0.4, y: 0.39130434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c7ee40be67e7441971b4d299a1013b
+      internalID: 1650184148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_8
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 15
+        width: 10
+        height: 23
+      alignment: 9
+      pivot: {x: 0.45, y: 0.39130434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c19240658cdaf41acdd5a3a9e5fef7
+      internalID: 1074596000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_9
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 15
+        width: 8
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c106b544c6da14987d327f2c93ea62
+      internalID: -1060909590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_10
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 15
+        width: 9
+        height: 20
+      alignment: 9
+      pivot: {x: 0.3888889, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932634e8a7afd074ca51630beaa44c82
+      internalID: 1734425501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_11
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 15
+        width: 12
+        height: 19
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.47368422}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ecbf115e646c2e47853f3963b82d441
+      internalID: 772291207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_12
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 15
+        width: 21
+        height: 20
+      alignment: 9
+      pivot: {x: 0.30952382, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e90a804d9572e042a17d3e9c2f7a673
+      internalID: -1265355578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_13
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 15
+        width: 19
+        height: 19
+      alignment: 9
+      pivot: {x: 0.13157895, y: 0.47368422}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3a7bec86d19b04493d0ac9f480acf7
+      internalID: 471881898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_14
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 15
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.14705883, y: 0.5294118}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d22c872827b2f840b632a79992d7543
+      internalID: -508389484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_15
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 15
+        width: 9
+        height: 20
+      alignment: 9
+      pivot: {x: 0.6111111, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6144e420cddf341b66ce35640b71ac
+      internalID: -1155837676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_16
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 15
+        width: 12
+        height: 19
+      alignment: 9
+      pivot: {x: 0.375, y: 0.47368422}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e88b8194ed47ad4093c0e62b858f5cb
+      internalID: -1428206740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_17
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 15
+        width: 21
+        height: 20
+      alignment: 9
+      pivot: {x: 0.6904762, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb2a45945ec6984e81a737fe4aa336d
+      internalID: 468834821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_18
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 15
+        width: 19
+        height: 19
+      alignment: 9
+      pivot: {x: 0.8684211, y: 0.47368422}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd140b06506d0ce46939115cd2ef8277
+      internalID: 2138799487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thor-hammer_19
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 15
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.5294118}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e91518131314c48a8ee9d9d0ebcd70
+      internalID: 903917487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +552,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      thor-hammer_0: -1627300107
+      thor-hammer_1: -1256020984
+      thor-hammer_10: 1734425501
+      thor-hammer_11: 772291207
+      thor-hammer_12: -1265355578
+      thor-hammer_13: 471881898
+      thor-hammer_14: -508389484
+      thor-hammer_15: -1155837676
+      thor-hammer_16: -1428206740
+      thor-hammer_17: 468834821
+      thor-hammer_18: 2138799487
+      thor-hammer_19: 903917487
+      thor-hammer_2: -480747452
+      thor-hammer_3: -1566445110
+      thor-hammer_4: 1210065305
+      thor-hammer_5: 320391995
+      thor-hammer_6: -856855368
+      thor-hammer_7: 1650184148
+      thor-hammer_8: 1074596000
+      thor-hammer_9: -1060909590
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

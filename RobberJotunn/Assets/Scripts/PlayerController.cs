@@ -23,9 +23,11 @@ public class PlayerController : MonoBehaviour
     private bool canTakeDamage = true;
 
     [Header("Dash")]
-    [SerializeField] float dashSpeed = 10f;
-    [SerializeField] float dashDuration = 1f;
-    [SerializeField] float dashCooldown = 1f;
+    [SerializeField] float dashSpeed;
+    [SerializeField] float dashDuration;
+    [SerializeField] float dashInvicibilityTime;
+
+    [SerializeField] float dashCooldown;
     private bool isDashing;
     private bool canDash = true;
     private bool hasWeapon;
@@ -115,7 +117,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Damage"))
         {       
             Debug.Log(other);
-            if (canTakeDamage && !isDashing)
+            if (canTakeDamage)
             {
                 StartCoroutine(TakeDamage());   
             }
@@ -127,7 +129,7 @@ public class PlayerController : MonoBehaviour
     private void OnParticleCollision(GameObject other){
         if (other.gameObject.CompareTag("Damage"))
         {       
-            if (canTakeDamage && !isDashing)
+            if (canTakeDamage)
             {
                 StartCoroutine(TakeDamage());   
             }
@@ -182,12 +184,17 @@ public class PlayerController : MonoBehaviour
         dashSound.Play();
         canDash = false;
         isDashing = true;
+        canTakeDamage = false;
         body.velocity = movement.normalized * dashSpeed;
         trailRenderer.emitting = true;
         yield return new WaitForSeconds(dashDuration);
 
         isDashing = false;
         trailRenderer.emitting = false;
+        
+        yield return new WaitForSeconds(dashInvicibilityTime);
+
+        canTakeDamage = true;
 
         yield return new WaitForSeconds(dashCooldown);
 

@@ -55,8 +55,6 @@ public class JotunnController : MonoBehaviour
         rightHandSpriteRenderer = transform.Find("RightHand").gameObject.GetComponent<SpriteRenderer>();
         leftHandSpriteRenderer = transform.Find("LeftHand").gameObject.GetComponent<SpriteRenderer>();
         jotunSprite = transform.Find("Sprite").gameObject.GetComponent<SpriteRenderer>();
-        JotunnDied();
-        JotunnDied();
         //StartCoroutine(JotunnDied());        
         timePassed = 0f;
     }

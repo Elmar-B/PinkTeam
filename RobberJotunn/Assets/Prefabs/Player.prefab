@@ -200,6 +200,7 @@ MonoBehaviour:
   invincibilityTime: 0.2
   dashSpeed: 3
   dashDuration: 0.1
+  dashInvicibilityTime: 0.05
   dashCooldown: 0.5
   isAttacking: 0
   canAttack: 1

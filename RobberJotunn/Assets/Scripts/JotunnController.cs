@@ -28,6 +28,11 @@ public class JotunnController : MonoBehaviour
     };
     private State state;
 
+    public GameObject bigHammerAttack;
+    private bool hammerIsAttacking = false;
+    public GameObject lightingAttack;
+    public JotunHearts jotunHearts;
+
     void Awake()
     {
         state = State.Phase1;
@@ -37,7 +42,8 @@ public class JotunnController : MonoBehaviour
 
         rightHandController = transform.Find("RightHand").gameObject.GetComponent<JotunnHandsController>();
         leftHandController = transform.Find("LeftHand").gameObject.GetComponent<JotunnHandsController>();
-
+        JotunnDied();
+        JotunnDied();
         timePassed = 0f;
     }
 
@@ -144,13 +150,29 @@ public class JotunnController : MonoBehaviour
                 {
                     icicleAttack(1f);
 
-                    timePassed += 2f;
+                    timePassed += 3f;
                 }
               
                 break;
             }
             case State.Phase3:
             {
+                float rnum = Random.Range(0f,3f);
+                
+                if(!hammerIsAttacking)
+                {
+                    GameObject hammerBigAttack = Instantiate(bigHammerAttack);
+                    hammerIsAttacking = true;
+                    GameObject lighting = Instantiate(lightingAttack);
+                    lighting.SetActive(true);
+                    
+                }
+                if(rnum < 1f)
+                {
+                    icicleAttack(1f);
+                    
+                }
+                timePassed += 3f;
                 break;
             }
             default: break;
@@ -165,6 +187,7 @@ public class JotunnController : MonoBehaviour
             case State.Phase1:
             {
                 //regenerate jotunn health move to phase 2;
+                jotunHearts.StateChange(2);
                 state = State.Phase2;
                 slider.maxValue = maxHealth;
                 health = maxHealth;
@@ -174,22 +197,24 @@ public class JotunnController : MonoBehaviour
                 rightHandController.numIcicles = 8;
                 leftHandController.numIcicles = 8;
 
-                timePassed = 0f;
+                //timePassed = 4f;
                 break;
             }
             case State.Phase2:
             {
                 //regenerate jotunn health move to phase 3;
+                jotunHearts.StateChange(3);
                 state = State.Phase3;
                 slider.maxValue = maxHealth;
                 health = maxHealth;
                 slider.value = health;
 
-                timePassed = 0f;
+                //timePassed = 0f;
                 break;
             }
             case State.Phase3:
             {
+                jotunHearts.StateChange(4);
                 GameManager.instance.Victory();
                 break;
             }

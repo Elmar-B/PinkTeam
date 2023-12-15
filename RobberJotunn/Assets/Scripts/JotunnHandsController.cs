@@ -125,11 +125,12 @@ public class JotunnHandsController : MonoBehaviour
     {
         state = State.Preparing;
 
-        gameObject.tag = "Damage";
         triggerCollider.enabled = false;
         physiscsCollider.enabled = false;
         startingPos = transform.position;
         target = defaultPos + new Vector3(0, 0.3f, 0);
+
+        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
 
         shadowObject.transform.localScale = shadowStartingScale;
         shadowSprite.enabled = true;
@@ -140,6 +141,7 @@ public class JotunnHandsController : MonoBehaviour
     private void Attacking(Vector3 playerPos)
     {
         state = State.Attacking;
+        gameObject.tag = "Damage";
 
         // Target location limited by range
         startingPos = transform.position;
@@ -157,6 +159,8 @@ public class JotunnHandsController : MonoBehaviour
     {
         fistSound.Play();
         state = State.Resting;
+
+        gameObject.GetComponent<SpriteRenderer>().sortingOrder = -1;
 
         triggerCollider.enabled = true;
         IcicleAttack();

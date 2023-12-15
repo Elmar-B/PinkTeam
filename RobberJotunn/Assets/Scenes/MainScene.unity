@@ -152,10 +152,6 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -610939418362788485, guid: 1908938cbe7fcfd4899ffab6d48fb6d5, type: 2}
-    - target: {fileID: 2223503196739390178, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2138799487, guid: ddd1dceee6fbbf44e928e1cd3c104438, type: 3}
     - target: {fileID: 3404678727824854294, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -163,10 +159,6 @@ PrefabInstance:
     - target: {fileID: 3947480656793935612, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: jotunnController
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4180671765058201693, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.322
       objectReference: {fileID: 0}
     - target: {fileID: 4180671765058201693, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -186,19 +178,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6110996260057817913, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5625
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6110996260057817913, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.71875
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6110996260057817913, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.08
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 6110996260057817913, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.32
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 6389138838527820535, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: jotunnController
@@ -226,10 +218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4180671765058201693, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 695175386}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
 --- !u!1 &257250953
@@ -2807,68 +2796,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a602c20329202784caa33beaf29db68b, type: 3}
---- !u!1001 &695175385
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2076662924}
-    m_Modifications:
-    - target: {fileID: 3374863082661506198, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374863082661506198, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374863082661506198, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374863082661506198, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374863082661506198, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374863082661506198, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374863082661506198, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374863082661506198, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374863082661506198, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3374863082661506198, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6433589351546203299, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-      propertyPath: m_Name
-      value: Hammer
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
---- !u!4 &695175386 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3374863082661506198, guid: bb9e9602d55101e4881dca552bba9cb0, type: 3}
-  m_PrefabInstance: {fileID: 695175385}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &744923041 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919913235547250962, guid: a602c20329202784caa33beaf29db68b, type: 3}
@@ -13479,11 +13406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24c6f787c09c3149bb14e9c9f4cbe9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &2076662924 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4180671765058201693, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
-  m_PrefabInstance: {fileID: 104163847}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2128661109
 GameObject:
   m_ObjectHideFlags: 0

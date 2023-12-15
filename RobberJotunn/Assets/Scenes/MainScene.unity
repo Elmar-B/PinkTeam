@@ -152,10 +152,6 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -610939418362788485, guid: 1908938cbe7fcfd4899ffab6d48fb6d5, type: 2}
-    - target: {fileID: 2223503196739390178, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2103754072, guid: a54ca3c92dbb69f44af83d089b266092, type: 3}
     - target: {fileID: 3404678727824854294, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -163,10 +159,6 @@ PrefabInstance:
     - target: {fileID: 3947480656793935612, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: jotunnController
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4180671765058201693, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4180671765058201693, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -186,19 +178,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6110996260057817913, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5625
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6110996260057817913, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.71875
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6110996260057817913, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.08
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 6110996260057817913, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.32
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 6389138838527820535, guid: 0bbc824b3df25464487f1e9723f2fa46, type: 3}
       propertyPath: jotunnController

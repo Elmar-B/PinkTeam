@@ -32,10 +32,14 @@ public class JotunnController : MonoBehaviour
     private bool hammerIsAttacking = false;
     public GameObject lightingAttack;
     public JotunHearts jotunHearts;
+
     public SpriteRenderer jotunSprite;
     private SpriteRenderer rightHandSpriteRenderer;
     private SpriteRenderer leftHandSpriteRenderer;
     private GameObject lighting;
+
+    private BigHammer hammerController;
+
 
     void Awake()
     {
@@ -171,6 +175,7 @@ public class JotunnController : MonoBehaviour
                 if(!hammerIsAttacking)
                 {
                     GameObject hammerBigAttack = Instantiate(bigHammerAttack);
+                    hammerController = hammerBigAttack.GetComponent<BigHammer>();
                     hammerIsAttacking = true;
                     lighting = Instantiate(lightingAttack);
                     lighting.SetActive(true);
@@ -223,16 +228,25 @@ public class JotunnController : MonoBehaviour
             }
             case State.Phase3:
             {
+                StartCoroutine(ReturnHammerToThor());
                 jotunHearts.StateChange(4);
                 state = State.Phase4;
                 Destroy(lighting);
                 StartCoroutine(fadeAway());
                 yield return new WaitForSeconds(7);
                 GameManager.instance.Victory();
+
                 break;
             }
         }
         
+    }
+
+    private IEnumerator ReturnHammerToThor()
+    {
+        hammerController.ReturnHammer(5f);
+        yield return new WaitForSeconds(10f);
+        GameManager.instance.Victory();
     }
 
     void icicleAttack(float speed)

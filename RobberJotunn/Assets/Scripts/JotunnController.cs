@@ -61,17 +61,6 @@ public class JotunnController : MonoBehaviour
 
     public void FirstAttack()
     {
-        float rnum = Random.Range(0f, 1f);
-        // Sword swipe
-        GameObject swordSwipeAttack = Instantiate(swordSwipeAttackPrefab);
-        SwordSwipeAttackPhysics script = swordSwipeAttack.GetComponent<SwordSwipeAttackPhysics>();
-        script.swing = true;
-        script.startingRotationSpeed = 150;
-        if (rnum > 0.5f)
-            script.rightSwing = true;
-        else
-            script.rightSwing = false;
-            
         GameManager.instance.backgroundMusic.Play();
         GameManager.instance.snowSound.Stop();
         slider.gameObject.SetActive(true);

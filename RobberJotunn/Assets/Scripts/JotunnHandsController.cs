@@ -130,7 +130,7 @@ public class JotunnHandsController : MonoBehaviour
         startingPos = transform.position;
         target = defaultPos + new Vector3(0, 0.3f, 0);
 
-        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
 
         shadowObject.transform.localScale = shadowStartingScale;
         shadowSprite.enabled = true;
@@ -160,7 +160,7 @@ public class JotunnHandsController : MonoBehaviour
         fistSound.Play();
         state = State.Resting;
 
-        gameObject.GetComponent<SpriteRenderer>().sortingOrder = -1;
+        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;
 
         triggerCollider.enabled = true;
         IcicleAttack();

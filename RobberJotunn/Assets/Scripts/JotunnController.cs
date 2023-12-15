@@ -24,7 +24,7 @@ public class JotunnController : MonoBehaviour
     public Slider slider;
     private float timePassed;
     private enum State{
-        Phase1, Phase2, Phase3
+        Phase1, Phase2, Phase3, Phase4
     };
     private State state;
 
@@ -32,6 +32,10 @@ public class JotunnController : MonoBehaviour
     private bool hammerIsAttacking = false;
     public GameObject lightingAttack;
     public JotunHearts jotunHearts;
+    public SpriteRenderer jotunSprite;
+    private SpriteRenderer rightHandSpriteRenderer;
+    private SpriteRenderer leftHandSpriteRenderer;
+    private GameObject lighting;
 
     void Awake()
     {
@@ -42,8 +46,13 @@ public class JotunnController : MonoBehaviour
 
         rightHandController = transform.Find("RightHand").gameObject.GetComponent<JotunnHandsController>();
         leftHandController = transform.Find("LeftHand").gameObject.GetComponent<JotunnHandsController>();
-        JotunnDied();
-        JotunnDied();
+
+        rightHandSpriteRenderer = transform.Find("RightHand").gameObject.GetComponent<SpriteRenderer>();
+        leftHandSpriteRenderer = transform.Find("LeftHand").gameObject.GetComponent<SpriteRenderer>();
+        jotunSprite = transform.Find("Sprite").gameObject.GetComponent<SpriteRenderer>();
+        StartCoroutine(JotunnDied());
+        StartCoroutine(JotunnDied());
+        //StartCoroutine(JotunnDied());        
         timePassed = 0f;
     }
 
@@ -71,7 +80,7 @@ public class JotunnController : MonoBehaviour
         slider.value = health;
         StartCoroutine(Blink());
         if (health <= 0)
-            JotunnDied();
+            StartCoroutine(JotunnDied());
     }
 
     private IEnumerator Blink()
@@ -163,7 +172,7 @@ public class JotunnController : MonoBehaviour
                 {
                     GameObject hammerBigAttack = Instantiate(bigHammerAttack);
                     hammerIsAttacking = true;
-                    GameObject lighting = Instantiate(lightingAttack);
+                    lighting = Instantiate(lightingAttack);
                     lighting.SetActive(true);
                     
                 }
@@ -181,7 +190,7 @@ public class JotunnController : MonoBehaviour
     
     }
 
-    private void JotunnDied()
+    private IEnumerator JotunnDied()
     {
         switch(state){
             case State.Phase1:
@@ -215,6 +224,10 @@ public class JotunnController : MonoBehaviour
             case State.Phase3:
             {
                 jotunHearts.StateChange(4);
+                state = State.Phase4;
+                Destroy(lighting);
+                StartCoroutine(fadeAway());
+                yield return new WaitForSeconds(7);
                 GameManager.instance.Victory();
                 break;
             }
@@ -236,4 +249,26 @@ public class JotunnController : MonoBehaviour
         icicleController.speed = speed;
     }
 
+    public IEnumerator fadeAway()
+    {
+        float alpha = 1f;
+        float fadeSpeed = 0.2f;
+
+        while(jotunSprite.color.a > 0){
+            Debug.Log("Alpha: "+alpha);
+            Color objectColor = jotunSprite.color;
+            float fadeAmount = objectColor.a -(fadeSpeed*Time.deltaTime);
+            objectColor = new Color(objectColor.r, objectColor.g, objectColor.b,fadeAmount);
+            jotunSprite.color = objectColor;
+            rightHandSprite.color = objectColor;
+            leftHandSpriteRenderer.color = objectColor;
+
+            yield return null;
+            
+        }
+            
+    }
+        
 }
+
+

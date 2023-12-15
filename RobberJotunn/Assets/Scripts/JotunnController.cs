@@ -33,12 +33,13 @@ public class JotunnController : MonoBehaviour
     public GameObject lightingAttack;
     public JotunHearts jotunHearts;
 
-    public SpriteRenderer jotunSprite;
+    private SpriteRenderer jotunSprite;
     private SpriteRenderer rightHandSpriteRenderer;
     private SpriteRenderer leftHandSpriteRenderer;
     private GameObject lighting;
 
     private BigHammer hammerController;
+    [SerializeField] GameObject playerObject;
 
 
     void Awake()
@@ -54,8 +55,8 @@ public class JotunnController : MonoBehaviour
         rightHandSpriteRenderer = transform.Find("RightHand").gameObject.GetComponent<SpriteRenderer>();
         leftHandSpriteRenderer = transform.Find("LeftHand").gameObject.GetComponent<SpriteRenderer>();
         jotunSprite = transform.Find("Sprite").gameObject.GetComponent<SpriteRenderer>();
-        StartCoroutine(JotunnDied());
-        StartCoroutine(JotunnDied());
+        JotunnDied();
+        JotunnDied();
         //StartCoroutine(JotunnDied());        
         timePassed = 0f;
     }
@@ -84,7 +85,7 @@ public class JotunnController : MonoBehaviour
         slider.value = health;
         StartCoroutine(Blink());
         if (health <= 0)
-            StartCoroutine(JotunnDied());
+            JotunnDied();
     }
 
     private IEnumerator Blink()
@@ -195,7 +196,7 @@ public class JotunnController : MonoBehaviour
     
     }
 
-    private IEnumerator JotunnDied()
+    private void JotunnDied()
     {
         switch(state){
             case State.Phase1:
@@ -233,20 +234,11 @@ public class JotunnController : MonoBehaviour
                 state = State.Phase4;
                 Destroy(lighting);
                 StartCoroutine(fadeAway());
-                yield return new WaitForSeconds(7);
-                GameManager.instance.Victory();
 
                 break;
             }
         }
         
-    }
-
-    private IEnumerator ReturnHammerToThor()
-    {
-        hammerController.ReturnHammer(5f);
-        yield return new WaitForSeconds(10f);
-        GameManager.instance.Victory();
     }
 
     void icicleAttack(float speed)
@@ -261,6 +253,18 @@ public class JotunnController : MonoBehaviour
         Vector3 direction = icicleObject.transform.position - player.transform.position;
         icicleController.angle = Vector2.SignedAngle(Vector3.up, direction) - 90f;
         icicleController.speed = speed;
+    }
+
+    private IEnumerator ReturnHammerToThor()
+    {
+        hammerController.ReturnHammer(5f);
+        yield return new WaitForSeconds(5f);
+        playerObject.GetComponent<PlayerController>().cutscene = true;;
+        playerObject.GetComponent<Animator>().SetTrigger("Victory");
+
+        yield return new WaitForSeconds(5f);
+
+        GameManager.instance.Victory();
     }
 
     public IEnumerator fadeAway()

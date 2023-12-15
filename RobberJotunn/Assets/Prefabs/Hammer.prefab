@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 0.75
-  rotation: 0.5
+  rotation: 2
   yHighOutOfBound: 5
   yLowOutOfBound: -1
   xHighOutOfBound: 4

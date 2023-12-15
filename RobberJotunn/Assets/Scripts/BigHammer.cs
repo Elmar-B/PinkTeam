@@ -26,7 +26,7 @@ public class BigHammer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         checkOutOfBound();
         if(!isMoving ||outOfBounds){

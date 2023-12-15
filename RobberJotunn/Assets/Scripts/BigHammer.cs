@@ -79,4 +79,9 @@ public class BigHammer : MonoBehaviour
         gameObject.GetComponent<Collider2D>().enabled = false;
         timePassed = 0;
     }
+
+    public void DestroyHammer()
+    {
+        Destroy(gameObject);
+    }
 }

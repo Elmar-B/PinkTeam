@@ -3190,6 +3190,10 @@ PrefabInstance:
       propertyPath: secondHeart
       value: 
       objectReference: {fileID: 781280657}
+    - target: {fileID: 133836263760608309, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 2076662909}
     - target: {fileID: 1961203365372161731, guid: a8a5bd00af6541ed297622592662c0c9, type: 3}
       propertyPath: player
       value: 

@@ -12,6 +12,7 @@ TagManager:
   - Pedastal
   - Border
   - Breakable
+  - Mjolnir
   layers:
   - Default
   - TransparentFX

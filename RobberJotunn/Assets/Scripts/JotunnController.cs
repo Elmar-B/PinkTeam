@@ -31,6 +31,9 @@ public class JotunnController : MonoBehaviour
         Phase1, Phase2, Phase3
     };
     private State state;
+    public JotunHearts jotunHearts;
+
+
 
     void Awake()
     {
@@ -180,10 +183,13 @@ public class JotunnController : MonoBehaviour
             case State.Phase1:
             {
                 //regenerate jotunn health move to phase 2;
+                jotunHearts.StateChange(2);
+                
                 state = State.Phase2;
                 slider.maxValue = maxHealth;
                 health = maxHealth;
                 slider.value = health;
+                
 
                 // Add icicles to hand attack
                 rightHandController.numIcicles = 8;
@@ -195,6 +201,8 @@ public class JotunnController : MonoBehaviour
             case State.Phase2:
             {
                 //regenerate jotunn health move to phase 3;
+                jotunHearts.StateChange(3);
+                
                 state = State.Phase3;
                 slider.maxValue = maxHealth;
                 health = maxHealth;
@@ -205,6 +213,8 @@ public class JotunnController : MonoBehaviour
             }
             case State.Phase3:
             {
+                
+                jotunHearts.StateChange(4);
                 GameManager.instance.Victory();
                 break;
             }

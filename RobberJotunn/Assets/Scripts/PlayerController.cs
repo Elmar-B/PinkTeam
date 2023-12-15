@@ -144,25 +144,28 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator TakeDamage()
     {
-        damageSound.Play();
-        health -= 1;
-        takingDamage = true;
+        if (health > 0)
+        {
+            damageSound.Play();
+            health -= 1;
+            takingDamage = true;
 
-        canTakeDamage = false;
+            canTakeDamage = false;
 
-        transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(true);
 
-        body.velocity = new Vector2(0, 0);
+            body.velocity = new Vector2(0, 0);
 
-        yield return new WaitForSeconds(damageDuration);
+            yield return new WaitForSeconds(damageDuration);
 
-        transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(false);
 
-        takingDamage = false;
+            takingDamage = false;
 
-        yield return new WaitForSeconds(invincibilityTime);
+            yield return new WaitForSeconds(invincibilityTime);
 
-        canTakeDamage = true;
+            canTakeDamage = true;
+        }
     }
     
     private IEnumerator PlayerDied()

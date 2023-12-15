@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -20,9 +19,6 @@ public class JotunnController : MonoBehaviour
     public GameObject threeSpearAttack;
     private JotunnHandsController rightHandController;
     private JotunnHandsController leftHandController;
-    public GameObject bigHammerAttack;
-    private bool hammerIsAttacking = false;
-    public GameObject lightingAttack;
 
     // Health bar:
     public Slider slider;
@@ -31,13 +27,10 @@ public class JotunnController : MonoBehaviour
         Phase1, Phase2, Phase3
     };
     private State state;
-    public JotunHearts jotunHearts;
-
-
 
     void Awake()
     {
-        state = State.Phase2;
+        state = State.Phase1;
         slider.maxValue = maxHealth;
         health = maxHealth;
         slider.value = health;
@@ -46,10 +39,7 @@ public class JotunnController : MonoBehaviour
         leftHandController = transform.Find("LeftHand").gameObject.GetComponent<JotunnHandsController>();
 
         timePassed = 0f;
-    }
 
-    public void FirstAttack()
-    {
         float rnum = Random.Range(0f, 1f);
         // Sword swipe
         GameObject swordSwipeAttack = Instantiate(swordSwipeAttackPrefab);
@@ -60,10 +50,6 @@ public class JotunnController : MonoBehaviour
             script.rightSwing = true;
         else
             script.rightSwing = false;
-            
-        GameManager.instance.backgroundMusic.Play();
-        GameManager.instance.snowSound.Stop();
-        slider.gameObject.SetActive(true);
     }
 
     public void Damage(int damage)
@@ -93,7 +79,7 @@ public class JotunnController : MonoBehaviour
     void FixedUpdate()
     {
         timePassed += Time.deltaTime;
-        if (timePassed > 5f)
+        if (timePassed > 4f)
         {
             timePassed = 0f;
             Attack();
@@ -127,15 +113,7 @@ public class JotunnController : MonoBehaviour
                 }
                 else if (rnum < 3f)
                 {
-                    GameObject icicleObject = Instantiate(iciclePrefab);
-                    icicleObject.transform.position = new Vector3(Random.Range(-0.18f, 0.18f), 0.6f, 0) + transform.position;
-
-                    icicleObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
-
-                    IcicleController icicleController = icicleObject.GetComponent<IcicleController>();
-                    GameObject player = GameObject.FindGameObjectWithTag("Player");
-                    Vector3 direction = icicleObject.transform.position - player.transform.position;
-                    icicleController.angle = Vector2.SignedAngle(Vector3.up, direction) - 90f;
+                    icicleAttack(1f);
 
                     // Next attack quicker to arive
                     timePassed += 2f;
@@ -144,7 +122,7 @@ public class JotunnController : MonoBehaviour
             }
             case State.Phase2:
             {
-                float rnum = Random.Range(0f, 2f);
+                float rnum = Random.Range(0f, 3f);
                 if(rnum < 1f)
                 {
                     GameObject spearSideAttack = Instantiate(sideSpearAttack);
@@ -152,23 +130,20 @@ public class JotunnController : MonoBehaviour
                 else if(rnum < 2f)
                 {
                     GameObject spearThreeAttack = Instantiate(threeSpearAttack);
+
+                    timePassed += 1f;
+                }
+                else if (rnum < 3f)
+                {
+                    icicleAttack(1f);
+
+                    timePassed += 2f;
                 }
               
                 break;
             }
             case State.Phase3:
             {
-                float rnum = Random.Range(0f,1f);
-                
-                if(!hammerIsAttacking)
-                {
-                    GameObject hammerBigAttack = Instantiate(bigHammerAttack);
-                    hammerIsAttacking = true;
-                    GameObject lighting = Instantiate(lightingAttack);
-                    lighting.SetActive(true);
-                    
-                }
-                
                 break;
             }
             default: break;
@@ -183,38 +158,31 @@ public class JotunnController : MonoBehaviour
             case State.Phase1:
             {
                 //regenerate jotunn health move to phase 2;
-                jotunHearts.StateChange(2);
-                
                 state = State.Phase2;
                 slider.maxValue = maxHealth;
                 health = maxHealth;
                 slider.value = health;
-                
 
                 // Add icicles to hand attack
                 rightHandController.numIcicles = 8;
                 leftHandController.numIcicles = 8;
 
-                //timePassed = 4f;
+                timePassed = 0f;
                 break;
             }
             case State.Phase2:
             {
                 //regenerate jotunn health move to phase 3;
-                jotunHearts.StateChange(3);
-                
                 state = State.Phase3;
                 slider.maxValue = maxHealth;
                 health = maxHealth;
                 slider.value = health;
 
-                //timePassed = 4f;
+                timePassed = 0f;
                 break;
             }
             case State.Phase3:
             {
-                
-                jotunHearts.StateChange(4);
                 GameManager.instance.Victory();
                 break;
             }
@@ -222,5 +190,18 @@ public class JotunnController : MonoBehaviour
         
     }
 
+    void icicleAttack(float speed)
+    {
+        GameObject icicleObject = Instantiate(iciclePrefab);
+        icicleObject.transform.position = new Vector3(Random.Range(-0.18f, 0.18f), 0.6f, 0) + transform.position;
+
+        icicleObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+
+        IcicleController icicleController = icicleObject.GetComponent<IcicleController>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Vector3 direction = icicleObject.transform.position - player.transform.position;
+        icicleController.angle = Vector2.SignedAngle(Vector3.up, direction) - 90f;
+        icicleController.speed = speed;
+    }
 
 }

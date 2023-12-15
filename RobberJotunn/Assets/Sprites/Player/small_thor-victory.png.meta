@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: small_thor-victory_2
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 15
+        width: 16
+        height: 23
+      alignment: 9
+      pivot: {x: 0.34375, y: 0.39130434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a8e7429e677a4442b0075dcfc7c66a3
+      internalID: 610599326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_thor-victory_3
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 15
+        width: 15
+        height: 24
+      alignment: 9
+      pivot: {x: 0.36666667, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdaa1b5a84bac0640bc2579e47633ee1
+      internalID: 1929435936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_thor-victory_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 13
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.48863637, y: 0.31428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24818c68f66fdee4c8e690a986fb78bb
+      internalID: 1814312561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_thor-victory_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 7
+        width: 48
+        height: 41
+      alignment: 9
+      pivot: {x: 0.48958334, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b714e677ebea545a589c6c7249ef47
+      internalID: -1580669808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_thor-victory_6
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 14
+        width: 35
+        height: 31
+      alignment: 9
+      pivot: {x: 0.3, y: 0.32258064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90912ff6b3e055948aaadf3d20e49c95
+      internalID: -198710460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_thor-victory_7
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 15
+        width: 31
+        height: 32
+      alignment: 9
+      pivot: {x: 0.30645162, y: 0.28125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8136e4823618f54b81dd5e0e34f87ed
+      internalID: -117790848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_thor-victory_8
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 15
+        width: 25
+        height: 27
+      alignment: 9
+      pivot: {x: 0.22, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5514452b3dec5d9438dfb0be0f37134a
+      internalID: 755770037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_thor-victory_9
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 15
+        width: 15
+        height: 24
+      alignment: 9
+      pivot: {x: 0.36666667, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36426fd2ba5f9e249899290b83908430
+      internalID: 538030217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_thor-victory_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 15
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: 0.28125, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8bf70b0c0642441899702927ebeef0
+      internalID: -1412432580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_thor-victory_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 15
+        width: 16
+        height: 21
+      alignment: 9
+      pivot: {x: 0.28125, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9047fb5a6bc60734d93abb28df60f9aa
+      internalID: 2081792719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +342,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      small_thor-victory_0: -1412432580
+      small_thor-victory_1: 2081792719
+      small_thor-victory_13: 2024886979
+      small_thor-victory_14: -964700011
+      small_thor-victory_15: -142956374
+      small_thor-victory_16: 2049748358
+      small_thor-victory_17: -1472195389
+      small_thor-victory_18: 1906206223
+      small_thor-victory_2: 610599326
+      small_thor-victory_3: 1929435936
+      small_thor-victory_4: 1814312561
+      small_thor-victory_5: -1580669808
+      small_thor-victory_6: -198710460
+      small_thor-victory_7: -117790848
+      small_thor-victory_8: 755770037
+      small_thor-victory_9: 538030217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

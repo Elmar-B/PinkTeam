@@ -227,6 +227,7 @@ public class JotunnController : MonoBehaviour
             }
             case State.Phase3:
             {
+                playerObject.GetComponent<Collider2D>().enabled = false;
                 StartCoroutine(ReturnHammerToThor());
                 jotunHearts.StateChange(4);
                 state = State.Phase4;
@@ -257,6 +258,7 @@ public class JotunnController : MonoBehaviour
     {
         hammerController.ReturnHammer(5f);
         yield return new WaitForSeconds(5f);
+        hammerController.DestroyHammer();
         playerObject.GetComponent<PlayerController>().cutscene = true;;
         playerObject.GetComponent<Animator>().SetTrigger("Victory");
 

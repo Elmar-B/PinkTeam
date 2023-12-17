@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     public bool canAttack = true;
     private bool isAlive = true;
     public bool cutscene;
+    private GameObject dashGap;
+    private bool atGap;
 
     void Awake()
     {
@@ -98,7 +100,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && canDash && movement != Vector2.zero)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             StartCoroutine(Dash());
         }
@@ -116,13 +118,26 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Damage"))
         {       
-            Debug.Log(other);
             if (canTakeDamage)
             {
                 StartCoroutine(TakeDamage());   
             }
             if (health <= 0)
                 StartCoroutine(PlayerDied());
+        }
+        else if (other.gameObject.CompareTag("Gap"))
+        {
+            dashGap = other.gameObject;
+            atGap = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Gap"))
+        {
+            dashGap = other.gameObject;
+            atGap = false;
         }
     }
 
@@ -186,11 +201,25 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         canTakeDamage = false;
         body.velocity = movement.normalized * dashSpeed;
+        Debug.Log(dashGap);
+
+        if (atGap)
+        {
+            dashGap.SetActive(false);
+            body.velocity = new Vector2(0, 4);
+        }
+        
         trailRenderer.emitting = true;
         yield return new WaitForSeconds(dashDuration);
 
         isDashing = false;
         trailRenderer.emitting = false;
+
+        if (dashGap)
+        {
+            dashGap.SetActive(true);
+            dashGap = null;
+        }
         
         yield return new WaitForSeconds(dashInvicibilityTime);
 

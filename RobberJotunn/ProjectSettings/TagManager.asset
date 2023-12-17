@@ -13,6 +13,7 @@ TagManager:
   - Border
   - Breakable
   - Mjolnir
+  - Gap
   layers:
   - Default
   - TransparentFX

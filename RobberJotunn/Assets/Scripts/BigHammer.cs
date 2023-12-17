@@ -72,7 +72,6 @@ public class BigHammer : MonoBehaviour
     // Start returning hammer to thor
     public void ReturnHammer(float returnTime)
     {
-        Debug.Log("Hammer Returning");
         this.returnTime = returnTime;
         hammerReturning = true;
         startPosition = transform.position;

@@ -200,7 +200,7 @@ MonoBehaviour:
   invincibilityTime: 0.4
   dashSpeed: 3
   dashDuration: 0.1
-  dashInvicibilityTime: 0.05
+  dashInvicibilityTime: 0.1
   dashCooldown: 0.5
   isAttacking: 0
   canAttack: 1
@@ -307,10 +307,10 @@ AudioSource:
   m_GameObject: {fileID: 7219720819977323203}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -610939418362788485, guid: 1908938cbe7fcfd4899ffab6d48fb6d5, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ae9ac4e0321e0104e9c4f032d8e12087, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

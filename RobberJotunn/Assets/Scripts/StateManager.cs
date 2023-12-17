@@ -8,7 +8,6 @@ public class StateManager : MonoBehaviour
 
     public void ResetGame()
     {
-        Debug.Log("Resetting Game");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }

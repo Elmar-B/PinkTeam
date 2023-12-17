@@ -102,7 +102,6 @@ public class JotunnController : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("Phase: "+state);
         switch(state){
             case State.Phase1:
             {
@@ -258,11 +257,9 @@ public class JotunnController : MonoBehaviour
 
     public IEnumerator fadeAway()
     {
-        float alpha = 1f;
         float fadeSpeed = 0.2f;
 
         while(jotunSprite.color.a > 0){
-            Debug.Log("Alpha: "+alpha);
             Color objectColor = jotunSprite.color;
             float fadeAmount = objectColor.a -(fadeSpeed*Time.deltaTime);
             objectColor = new Color(objectColor.r, objectColor.g, objectColor.b,fadeAmount);

@@ -136,7 +136,6 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Gap"))
         {
-            dashGap = other.gameObject;
             atGap = false;
         }
     }
@@ -201,7 +200,6 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         canTakeDamage = false;
         body.velocity = movement.normalized * dashSpeed;
-        Debug.Log(dashGap);
 
         if (atGap)
         {

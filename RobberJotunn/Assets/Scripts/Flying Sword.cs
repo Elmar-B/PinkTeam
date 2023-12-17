@@ -37,24 +37,12 @@ public class FlyingSword : MonoBehaviour
     {
         if(isMoving)
         {
-            if(isAttacking)
+            if (isAttacking)
             {
                 playerPos = playerObj.transform.position;
                 Vector3 direction = (playerPos - transform.position).normalized;
                 myRigidBody.velocity = direction * velocity;
                 
-            }
-            else
-            {
-                if(transform.position.x == originalPos.x && transform.position.y == originalPos.y)
-                {
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    Vector3 direction = (originalPos - transform.position).normalized;
-                    myRigidBody.velocity = direction * velocity;
-                }
             }
 
             Vector3 rotaionToAdd = new Vector3(0, 0, spinningVelocity);

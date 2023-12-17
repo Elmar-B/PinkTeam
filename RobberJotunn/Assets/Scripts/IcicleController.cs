@@ -26,7 +26,6 @@ public class IcicleController : MonoBehaviour
         if (!isMoving)
         {
             body.velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad*angle), Mathf.Sin(Mathf.Deg2Rad*angle)) * speed;
-            Debug.Log(angle);
             isMoving = true;
         }
         
